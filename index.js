@@ -8,5 +8,9 @@ app.listen(port, () => {
 })
 
 app.get('/', function(req, res){
-   res.sendFile(`${__dirname}/login.html`);
+   res.sendFile(`${__dirname}/content/login.html`);
+});
+
+app.get('/login.js', function (req, res) {
+  res.sendFile(`${__dirname}/content/login.js`);
 });
