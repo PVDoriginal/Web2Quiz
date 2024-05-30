@@ -18,3 +18,11 @@ app.get('/login.js', function (req, res) {
 app.get('/login.css', function (req, res) {
   res.sendFile(`${__dirname}/content/login.css`);
 });
+
+app.get('/kahoot.mp3', function(req, res) {
+  res.sendFile(`${__dirname}/kahoot.mp3`);
+});
+
+app.get('/form-submit', function(req, res) {
+  res.sendFile(`${__dirname}/content/login.html`);
+});

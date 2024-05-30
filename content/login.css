@@ -104,10 +104,25 @@ button {
 
 @keyframes label-in{
 	0%{}
-	100%{font-size: 1.3em}
+	100%{font-size: 1.2em}
 }
 
 @keyframes label-out{
-	0%{font-size: 1.3em}
+	0%{font-size: 1.2em}
 	100%{}
+}
+
+#kahoot-container{
+	position: absolute;
+	translate: 1vw -94vh;
+	font-size: 0.8em;
+}
+
+*[type=checkbox]{
+	width: 20px;
+	height: 20px;
+}
+
+*:checked{
+	background-color: red;
 }

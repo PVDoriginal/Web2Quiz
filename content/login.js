@@ -1,3 +1,4 @@
+let audio = new Audio("../kahoot.mp3");
 window.onload= function(){
 	const fname = document.getElementById("fname");
 	const lname = document.getElementById("lname");
@@ -5,6 +6,9 @@ window.onload= function(){
 	const pass = document.getElementById("pass");
 	const btn1 = document.getElementById("btn1");
 	const btn2 = document.getElementById("btn2");
+	const kahoot = document.getElementById("kahoot-box");
+	
+	kahoot.addEventListener("change", handleKahootChange);
 
 	fname.addEventListener("focus", handleTextFocus);
 	fname.addEventListener("focusout", handleTextFocusOut);
@@ -31,6 +35,17 @@ window.onload= function(){
 		label.addEventListener("mouseout", handleLabelHoverOut);
 	});
 };
+
+function handleKahootChange(event){
+	if(event.target.checked){
+		audio.play();
+		audio.loop = true;
+	}
+	else{
+		audio.pause();
+		audio.currentTime = 0;
+	}
+}
 
 function handleTextFocus(event){
 	if (event.target.innerHTML == '...') event.target.innerHTML = '';
