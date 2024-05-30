@@ -1,0 +1,113 @@
+body{
+	background-color: #373A40;
+	color: #DC5F00;
+
+  	font-family: "Rubik", sans-serif;
+  	font-optical-sizing: auto;
+  	font-weight: 300;
+  	font-style: normal;
+
+  	font-size: 2em;
+}
+
+form{
+	display: flex;
+  	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 95vh;
+}
+
+.container{
+	margin-bottom: 10px;
+	height: 10vh;
+  	width: fit-content;
+	text-align: center;
+}
+
+*[type=text], *[type=password]{
+  border: 0px solid red;
+  border-bottom: 2px solid #686D76;
+  background-color: transparent;
+  color: #EEEEEE;
+  width: fit-content;
+  font-size: 1em;
+}
+
+*:focus {
+  outline: none;
+  color: #EEEEEE;
+  border: 0px solid black;
+  border-bottom: 2px solid #686D76;
+}
+
+body{
+	border: 7px solid white;
+}
+
+.btn-container{
+	margin-bottom: 30px;
+	height: 10vh;
+  	width: fit-content;
+	text-align: center;
+}
+
+button {
+	width: 10em;
+	height: 2em;
+	background-color: transparent;
+	border: 1px solid #EEEEEE;
+	border-radius: 10px;
+
+  	font-family: "Rubik", sans-serif;
+  	font-optical-sizing: auto;
+  	font-weight: 300;
+  	font-style: normal;
+
+  	font-size: 0.6em;
+  	color: #EEEEEE;
+}
+
+.btn-hover {
+	background-color: #DC5F00;
+
+	animation-name: btn-anim-in;
+	animation-duration: 0.75s;
+	animation-fill-mode: forwards;
+}
+
+.btn-not-hover {
+	animation-name: btn-anim-out;
+	animation-duration: 0.75s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes btn-anim-in{
+	0%{}
+	100%{width: 12em; height: 2.15em; border-radius: 20px}
+}
+@keyframes btn-anim-out{
+	0%{width: 12em; height: 2.15em; border-radius: 20px}
+	100%{}
+}
+
+.label-hover-in{
+	animation-name: label-in;
+	animation-duration: .35s;
+	animation-fill-mode: forwards;
+}
+.label-hover-out{
+	animation-name: label-out;
+	animation-duration: .35s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes label-in{
+	0%{}
+	100%{font-size: 1.3em}
+}
+
+@keyframes label-out{
+	0%{font-size: 1.3em}
+	100%{}
+}

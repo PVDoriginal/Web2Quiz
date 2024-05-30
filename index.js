@@ -14,3 +14,7 @@ app.get('/', function(req, res){
 app.get('/login.js', function (req, res) {
   res.sendFile(`${__dirname}/content/login.js`);
 });
+
+app.get('/login.css', function (req, res) {
+  res.sendFile(`${__dirname}/content/login.css`);
+});

@@ -2,12 +2,35 @@
 <html>
 	<head>
 		<title> lol </title>
-		<script type="module" src="/login.js"></script>
+		<link rel = "stylesheet" href = "login.css">
+		<script type = "module" src = "login.js"></script>
 	</head>
 	<body>
-		<p>
-			idk
-		</p>
+		<div class = "form-container">
+		<form action = "../form-submit" method = "get">
+  			<div class = "container">
+    			<label for = "fname"><b>First Name | </b></label>
+    			<span type = "text" role="textbox" contenteditable name="fname" required id = "fname">...</span>
+    		</div>
+  			<div class = "container">
+    			<label for = "lname"><b>Last Name | </b></label>
+    			<span type = "text" role="textbox" contenteditable name="lname" required id = "lname">...</span>
+    		</div>
+  			<div class = "container">
+    			<label for = "food"><b>Favorite Food | </b></label>
+    			<span type = "text" role="textbox" contenteditable name="food" required id = "food">...</span>
+    		</div>
+    		<div class = "container">
+    			<label for = "pass"><b>Password | </b></label>
+    			<span type = "password" role="textbox" contenteditable name="psw" required id = "pass">...</span>
+    		</div>
+    		<div class = "btn-container">
+    			<button type = "submit" id = "btn1">Create</button>
+    			<button type = "submit" id = "btn2">Login</button>
+  				</div>
+  			</div>
+		</form>
+		</div>
 
 	<body>
 </html>
