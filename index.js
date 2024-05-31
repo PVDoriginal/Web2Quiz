@@ -33,7 +33,26 @@ app.get('/kahoot.mp3', function(req, res) {
   res.sendFile(`${__dirname}/kahoot.mp3`);
 });
 
+app.get('/main.html', function (req, res) {
+  res.sendFile(`${__dirname}/content/main.html`);
+  res.send
+});
+
+app.get('/main.js', function (req, res) {
+  res.sendFile(`${__dirname}/content/main.js`);
+  res.send
+});
+
+app.get('/main.css', function (req, res) {
+  res.sendFile(`${__dirname}/content/main.css`);
+});
+
+
 var access_code; 
+
+app.get('/options.json', function(req, res){
+  res.sendFile(`${__dirname}/content/options.json`)
+});
 
 app.post('/form-submit', function(req, res) {
   console.log(req.body);

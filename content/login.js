@@ -13,6 +13,10 @@ window.onload= function(){
 
 	form.addEventListener("submit", async(event)=>{event.preventDefault()});
 
+	submit.addEventListener("click", (event)=>{
+		window.open("main.html", "_self");
+	});
+
 	create.addEventListener("click", (event) => {
 		if(!validateForm()) return;
 

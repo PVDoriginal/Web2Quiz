@@ -1,0 +1,177 @@
+html{
+	overflow: hidden;
+}
+
+body{
+	overflow: hidden;
+	background-color: #EEEEEE;
+	color: #A91D3A;
+  	font-family: "Rubik", sans-serif;
+  	font-optical-sizing: auto;
+  	font-weight: 300;
+  	font-style: normal;
+
+	width: 100vw;
+	height: 100vh;
+
+  	font-size: 2em;
+	margin: 0;
+}
+
+#quote-container{
+	position: relative;
+	margin-left: auto;
+	margin-top: 10vh;
+}
+
+#quote-container:hover{
+	cursor: default;
+}
+
+#search-container{
+	position: relative;
+	/*border: 5px solid red;*/
+	height: 60vh;
+	top: 35vh;
+	margin: 0;
+
+	display: flex;
+	flex-direction: column;
+}
+
+#search{
+	/*border: 5px solid blue;*/
+	text-align: center;
+	color: #9bbdf1a7;
+	border-bottom: 5px solid #387ADF;
+	margin-bottom: 10px;
+	font-size: 0.8em;
+	text-transform: uppercase;
+}
+
+#search:focus{
+	outline: none;
+}
+
+#search:hover{
+	cursor: text;
+}
+
+#options{
+	/*border: 5px solid green;*/
+	flex-grow: 4;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: flex-start;
+	align-content: flex-start;
+}
+
+.option{
+	width: auto;
+	height: 1.15em;
+	border: 4px dotted #DC5F00;
+	text-align: center;
+	justify-content: center;  
+	margin: 0;
+	padding: 10px;
+	margin: 7px;
+
+	color: #151515;
+	font-family: "Poppins", sans-serif;
+	font-weight: 550;
+	font-style: normal;
+}
+
+.option-hover{
+	animation-name: anim-option-hover;
+	animation-duration: 1.25s;
+	animation-fill-mode: forwards;
+}
+
+.option-hoverout{
+	animation-name: anim-option-hoverout;
+	animation-duration: 1.25s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes anim-option-hover{
+	0%{}
+	100%{scale: 1.05 1.05;}
+}
+
+@keyframes anim-option-hoverout{
+	0%{scale: 1.1 1.1;}
+	100%{}
+}
+
+.option:hover{
+	cursor: default
+}
+
+#highlight{
+	color: #C73659;
+}
+
+#quote-container{
+	margin: 0;
+	margin-top: 10vh;
+}
+
+#quote{
+	color: #151515;
+	font-weight: 700;
+	text-align: center;
+	font-style: oblique;
+	font-size: 1.2em;
+	margin: 0;
+}
+
+#quote:hover{
+	pointer-events: none;
+	cursor: default;
+}
+
+#kahoot-cover{
+	position: absolute;
+	width: 45vw;
+	height: 30vh;
+}
+
+#kahoot-cover img{
+	position: absolute;
+	z-index: 1;
+}
+
+#kahoot-cover span{
+	position: absolute;
+	z-index: 2;
+	font-style: italic;
+	font-weight: 500;
+	font-size: 2em;
+
+	pointer-events: none;
+	translate: 43vw 45vh;
+
+	animation-name: shake;
+	animation-duration: .15s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+	0% { transform: translate(0, 0) rotate(0deg); }
+	25% { transform: translate(2.5px, 2.5px) rotate(2deg); }
+	50% { transform: translate(0, 0) rotate(0eg); }
+	75% { transform: translate(-2.5px, 2.5px) rotate(-2deg); }
+	100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+@keyframes shake2{
+	0% { transform: skewX(-15deg); }
+	5% { transform: skewX(15deg); }
+	10% { transform: skewX(-15deg); }
+	15% { transform: skewX(15deg); }
+	20% { transform: skewX(0deg); }
+	100% { transform: skewX(0deg); }
+}
