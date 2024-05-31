@@ -1,4 +1,4 @@
-let audio = new Audio("../kahoot.mp3");
+//let audio = new Audio("../kahoot.mp3");
 window.onload= function(){
 	const fname = document.getElementById("fname");
 	const lname = document.getElementById("lname");
@@ -6,9 +6,30 @@ window.onload= function(){
 	const pass = document.getElementById("pass");
 	const btn1 = document.getElementById("btn1");
 	const btn2 = document.getElementById("btn2");
-	const kahoot = document.getElementById("kahoot-box");
-	
-	kahoot.addEventListener("change", handleKahootChange);
+
+	const form = document.querySelector("form");
+	const submit = document.getElementById("btn2");
+
+	form.addEventListener("submit", async(event)=>{
+		event.preventDefault();
+		let fd = new FormData();
+
+		fd.set("fname", fname.innerHTML);
+		fd.set("lname", lname.innerHTML);
+		fd.set("food", food.innerHTML);
+		fd.set("pass", pass.innerHTML);
+
+		const urlEncoded = new URLSearchParams(fd).toString();
+		fetch('../form-submit', {
+			method: "POST",
+			body: urlEncoded,
+			headers: {
+				'Content-type' : 'application/x-www-form-urlencoded' 
+			}
+		}).then(res => res.json()).then(data => {
+			 console.log(data);
+		});
+	});
 
 	fname.addEventListener("focus", handleTextFocus);
 	fname.addEventListener("focusout", handleTextFocusOut);

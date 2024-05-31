@@ -4,7 +4,7 @@
   "description": "Random bs",
   "main": "index.js",
   "scripts": {
-    "start": "node ./bin/www",
+    "start": "node .",
     "watch": "nodemon --ext *"
   },
   "engines": {
@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/PVDoriginal/Web2Quiz#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.19.2"
   },
   "devDependencies": {
