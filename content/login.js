@@ -8,10 +8,14 @@ window.onload= function(){
 	const btn2 = document.getElementById("btn2");
 
 	const form = document.querySelector("form");
+	const create = document.getElementById("btn1");
 	const submit = document.getElementById("btn2");
 
-	form.addEventListener("submit", async(event)=>{
-		event.preventDefault();
+	form.addEventListener("submit", async(event)=>{event.preventDefault()});
+
+	create.addEventListener("click", (event) => {
+		if(!validateForm()) return;
+
 		let fd = new FormData();
 
 		fd.set("fname", fname.innerHTML);
@@ -27,20 +31,30 @@ window.onload= function(){
 				'Content-type' : 'application/x-www-form-urlencoded' 
 			}
 		}).then(res => res.json()).then(data => {
-			 console.log(data);
+			console.log(data);
+			if(data.error != '') handleUserExistsError(data.error);
 		});
 	});
 
+	if (window.localStorage.getItem("q2w-fname") != null) fname.innerHTML = localStorage.getItem("q2w-fname");
+	if (window.localStorage.getItem("q2w-lname") != null) lname.innerHTML = localStorage.getItem("q2w-lname");
+	if (window.localStorage.getItem("q2w-food") != null) food.innerHTML = localStorage.getItem("q2w-food");
+	if (window.localStorage.getItem("q2w-pass") != null) pass.innerHTML = localStorage.getItem("q2w-pass");
+
 	fname.addEventListener("focus", handleTextFocus);
+	fname.addEventListener("focusout", updateLocalStorage);
 	fname.addEventListener("focusout", handleTextFocusOut);
 
 	lname.addEventListener("focus", handleTextFocus);
+	lname.addEventListener("focusout", updateLocalStorage);
 	lname.addEventListener("focusout", handleTextFocusOut);
 
 	food.addEventListener("focus", handleTextFocus);
+	food.addEventListener("focusout", updateLocalStorage);
 	food.addEventListener("focusout", handleTextFocusOut);
 
 	pass.addEventListener("focus", handleTextFocus);
+	pass.addEventListener("focusout", updateLocalStorage);
 	pass.addEventListener("focusout", handleTextFocusOut);
 
 	btn1.addEventListener("mouseover", handleButtonHover);
@@ -49,23 +63,67 @@ window.onload= function(){
 	btn2.addEventListener("mouseover", handleButtonHover);
 	btn2.addEventListener("mouseout", handleButtonHoverOut);
 
-
 	const labels = document.querySelectorAll('label');
 	labels.forEach(label => {
 		label.addEventListener("mouseover", handleLabelHover);
 		label.addEventListener("mouseout", handleLabelHoverOut);
 	});
+
+	function updateLocalStorage(event){
+		window.localStorage.setItem("q2w-fname", fname.innerHTML);
+		window.localStorage.setItem("q2w-lname", lname.innerHTML);
+		window.localStorage.setItem("q2w-food", food.innerHTML);
+		window.localStorage.setItem("q2w-pass", pass.innerHTML);
+	}
+
+	function validateForm(){		
+		let regex = new RegExp(/[a-zA-Z]{2,10}/); 
+		if(!regex.test(fname.innerHTML)){
+			handleUserExistsError("FIRST NAME MUST BE MADE OF 2-10 LETTERS");
+			return false;
+		}
+		if(!regex.test(lname.innerHTML)){
+			handleUserExistsError("LAST NAME MUST BE MADE OF 2-10 LETTERS");
+			return false;
+		};
+
+		regex = new RegExp(/[a-zA-z0-9]{3,10}/);
+		if(!regex.test(pass.innerHTML)){
+			handleUserExistsError("PASWORD MUST BE MADE OF 3-10 NUMBERS AND LETTERS");
+			return false;
+		};
+
+		regex = new RegExp(/[a-zA-z]{3,10}/);
+		if(!regex.test(food.innerHTML)){
+			handleUserExistsError("FOOD NAME MUST BE MADE OF 3-10 LETTERS");
+			return false;
+		};
+
+		return true;
+	}
 };
 
-function handleKahootChange(event){
-	if(event.target.checked){
-		audio.play();
-		audio.loop = true;
+var error = null;
+
+function handleUserExistsError(error_text){
+	if(error != null){ 
+		error.remove();
+		error = null;
 	}
-	else{
-		audio.pause();
-		audio.currentTime = 0;
-	}
+	error = document.createElement("div");
+	error.innerHTML = error_text;
+	error.className = "error";
+	error.classList.add("shake");
+	error['used'] = false;
+
+	document.body.appendChild(error);
+	error.addEventListener("mouseover", handleGoAway);
+}
+
+function handleGoAway(event){
+	if(event.target['used']) return;
+	event.target.classList.add("goaway" + Math.floor(Math.random() * 3 + 1));
+	event.target['used'] = true;
 }
 
 function handleTextFocus(event){

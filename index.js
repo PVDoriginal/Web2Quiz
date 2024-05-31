@@ -16,7 +16,6 @@ app.use(express.urlencoded({
   parameterLimit: 10,
 }));
 
-
 app.get('/', function(req, res){
    res.sendFile(`${__dirname}/content/login.html`);
 });
@@ -48,7 +47,6 @@ app.post('/form-submit', function(req, res) {
   });
   access_code = (Math.random() + 1).toString(36).substring(4);
   console.log("code: " + access_code);
-  res.status(200).send({ error: 'none' , access_code: access_code});
+  res.status(200).send({ error: '' , access_code: access_code});
 });
-
 

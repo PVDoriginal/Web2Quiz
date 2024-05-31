@@ -1,13 +1,28 @@
+html{
+	overflow: hidden;
+}
+
 body{
+	overflow: hidden;
 	background-color: #373A40;
 	color: #DC5F00;
-
   	font-family: "Rubik", sans-serif;
   	font-optical-sizing: auto;
   	font-weight: 300;
   	font-style: normal;
 
+	width: 99vw;
+	height: 97vh;
+
   	font-size: 2em;
+
+	background-image: url("https://i0.wp.com/unibuc.ro/wp-content/uploads/2020/01/facultate-mate-info.jpg?fit=1200%2C798&ssl=1"),
+					  url("https://www.conae.de/thumbs/3/721_etalbond_farbe_mattmattes_978_jetblack.jpg?m=1620035212");
+	
+	background-blend-mode: overlay;
+	background-position: center;
+	background-repeat: no-repeat; 
+	background-size: cover; 
 }
 
 form{
@@ -68,6 +83,10 @@ button {
   	color: #EEEEEE;
 }
 
+button:focus{
+	background-color: #a14703;
+}
+
 .btn-hover {
 	background-color: #DC5F00;
 
@@ -125,4 +144,73 @@ button {
 
 *:checked{
 	background-color: red;
+}
+
+.error{
+	position: absolute;
+	left: 0; 
+	right: 0;
+	text-align: center;
+	margin-left: auto; 
+	margin-right: auto; 
+	font-size: 1em;
+	width: 900px; /* Need a specific value to work */
+	bottom: 20vh;
+	color: white;
+	text-shadow: rgb(240, 15, 15) 2px 5px;
+	font-weight: 500;
+}
+
+.error:hover{
+	cursor: default;
+}
+
+.shake{
+	animation-name: shake-anim;
+	animation-duration: .25s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes shake-anim {
+	0% { transform: rotate(0deg); }
+	25% { transform: rotate(2deg); }
+	50% { transform: rotate(0eg); }
+	75% { transform: rotate(-2deg); }
+	100% { transform: rotate(0deg); }
+}
+
+.goaway1{
+	animation-name: go-away1;
+	animation-duration: .5s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
+
+@keyframes go-away1{
+	0%{}
+	100%{bottom: -25vh; rotate: 213deg;}
+}
+
+.goaway2{
+	animation-name: go-away2;
+	animation-duration: .5s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
+
+@keyframes go-away2{
+	0%{}
+	100%{bottom: -15vh; right: -100vh; rotate: -193deg;}
+}
+
+.goaway3{
+	animation-name: go-away3;
+	animation-duration: .5s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
+
+@keyframes go-away3{
+	0%{}
+	100%{bottom: -15vh; left: -100vh; rotate: -193deg;}
 }

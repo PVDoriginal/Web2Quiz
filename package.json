@@ -23,7 +23,8 @@
   "homepage": "https://github.com/PVDoriginal/Web2Quiz#readme",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "gapi": "^0.0.3"
   },
   "devDependencies": {
     "connect-livereload": "^0.6.1",
