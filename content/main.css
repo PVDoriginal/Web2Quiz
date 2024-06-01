@@ -125,6 +125,7 @@ body{
 	font-style: normal;
 	font-size: 1.5em;
 	text-shadow: red 2px 5px;
+	opacity: 0.75;
 
 	position: absolute;
 	left: 0; 
@@ -146,7 +147,7 @@ body{
 	z-index: 4;
 	left: 0; 
 	right: 0; 
-	bottom: 10vh;
+	bottom: 50vh;
 	border-radius: 10px;
 	margin-left: auto; 
 	margin-right: auto; 
@@ -154,7 +155,8 @@ body{
 	padding: 10px;
 	height: 1em;
 
-	background-color: #95c449;
+	border: 5px solid #95c449; 
+	background-color: #95c44973;
 	color: white;
 }
 
@@ -168,7 +170,7 @@ body{
 	z-index: 4;
 	left: 0; 
 	right: 0; 
-	bottom: 10vh;
+	bottom: 50vh;
 	border-radius: 10px;
 	margin-left: auto; 
 	margin-right: auto; 
@@ -176,7 +178,8 @@ body{
 	padding: 10px;
 	height: 1em;
 
-	background-color: #d54c3f;
+	border: 5px solid #d54c3f; 
+	background-color: #d54c3f76;
 	color: white;
 
 	animation-name: shake;
@@ -286,4 +289,17 @@ body{
 	15% { transform: skewX(15deg); }
 	20% { transform: skewX(0deg); }
 	100% { transform: skewX(0deg); }
+}
+
+#score{
+	position: absolute;
+	right: 2vw;
+	top: 1vh;
+	text-align: right;
+	width: 6em;
+	background-color: #15F5BA;
+	color: #F0F3FF;
+	border-radius: 10px;
+	padding: 10px;
+	margin: 0;
 }

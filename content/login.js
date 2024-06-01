@@ -6,18 +6,21 @@ window.onload= function(){
 	const pass = document.getElementById("pass");
 	const btn1 = document.getElementById("btn1");
 	const btn2 = document.getElementById("btn2");
+	const create_screen = document.getElementById("create-screen");
 
 	const form = document.querySelector("form");
 	const create = document.getElementById("btn1");
 	const submit = document.getElementById("btn2");
+	const play = document.getElementById("btn3");
+	const score = document.getElementById("score");
 
 	form.addEventListener("submit", async(event)=>{event.preventDefault()});
 
-	submit.addEventListener("click", (event)=>{
+	play.addEventListener("click", (event)=>{
 		window.open("main.html", "_self");
 	});
 
-	create.addEventListener("click", (event) => {
+	submit.addEventListener("click", (event)=>{
 		if(!validateForm()) return;
 
 		let fd = new FormData();
@@ -26,6 +29,40 @@ window.onload= function(){
 		fd.set("lname", lname.innerHTML);
 		fd.set("food", food.innerHTML);
 		fd.set("pass", pass.innerHTML);
+		fd.set("highscore", 0);
+
+		const urlEncoded = new URLSearchParams(fd).toString();
+		let a = fetch('../user-login', {
+			method: "POST",
+			body: urlEncoded,
+			headers: {
+				'Content-type' : 'application/x-www-form-urlencoded' 
+			}
+		}).then(res => res.json()).then(data => {
+			console.log(data);
+			handleUserExistsError(data.error);
+
+			if(data.error = "Logged In!"){ 
+				score.innerHTML = "HIGHSCORE: " + data.highscore;
+				create.remove();
+				submit.remove();
+				play.style.visibility = "visible";
+			}
+		});
+	});
+
+    const timeout = async ms => new Promise(res => setTimeout(res, ms));
+	create.addEventListener("click", (event) => {
+		if(!validateForm()) return;
+
+		let fd = new FormData();
+		showCreateScreen();
+
+		fd.set("fname", fname.innerHTML);
+		fd.set("lname", lname.innerHTML);
+		fd.set("food", food.innerHTML);
+		fd.set("pass", pass.innerHTML);
+		fd.set("highscore", 0);
 
 		const urlEncoded = new URLSearchParams(fd).toString();
 		fetch('../form-submit', {
@@ -36,9 +73,15 @@ window.onload= function(){
 			}
 		}).then(res => res.json()).then(data => {
 			console.log(data);
-			if(data.error != '') handleUserExistsError(data.error);
+			handleUserExistsError(data.error);
 		});
 	});
+
+	async function showCreateScreen(){
+		create_screen.style.visibility = "visible";
+		await timeout(3000);
+		create_screen.style.visibility = "hidden";
+	}
 
 	if (window.localStorage.getItem("q2w-fname") != null) fname.innerHTML = localStorage.getItem("q2w-fname");
 	if (window.localStorage.getItem("q2w-lname") != null) lname.innerHTML = localStorage.getItem("q2w-lname");
@@ -67,11 +110,16 @@ window.onload= function(){
 	btn2.addEventListener("mouseover", handleButtonHover);
 	btn2.addEventListener("mouseout", handleButtonHoverOut);
 
+	play.addEventListener("mouseover", handleButtonHover);
+	play.addEventListener("mouseout", handleButtonHoverOut);
+
 	const labels = document.querySelectorAll('label');
 	labels.forEach(label => {
 		label.addEventListener("mouseover", handleLabelHover);
 		label.addEventListener("mouseout", handleLabelHoverOut);
 	});
+	score.addEventListener("mouseover", handleLabelHover);
+	score.addEventListener("mouseout", handleLabelHoverOut);
 
 	function updateLocalStorage(event){
 		window.localStorage.setItem("q2w-fname", fname.innerHTML);

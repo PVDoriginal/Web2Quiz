@@ -1,13 +1,15 @@
 let audio = new Audio("../kahoot.mp3");
 let congrats = new Audio("../congrats.mp3");
 let wrong = new Audio("../wrong.mp3");
-let audio_s1 = new Audio("../audio/audio-s1.mp3");
 const possible_colors = ['#FF7ED4', '#EE9322', '#A084E8', '#D895DA', '#FF9EAA'];
 let colors = [];
 let names = [];
 let images = [];
 let options = [];
 let quotes = [];
+let audio_s = [new Audio("../audio/audio-s1.mp3"), new Audio("../audio/audio-s2.mp3"), new Audio("../audio/audio-s3.mp3"), new Audio("../audio/audio-s4.mp3")];
+
+let score = 0;
 
 window.onload= function(){
     const cover = document.getElementById("kahoot-cover");
@@ -119,10 +121,10 @@ window.onload= function(){
         current_cover = SetCover(quote["name"]);
         audio.pause();
         audio.currentTime = 0;
-        audio_s1.play();
+        audio_s[Math.floor(Math.random() * audio_s.length)].play();
 
         let answer_box = document.createElement("div");
-        answer_box.innerHTML = answer;
+        answer_box.innerHTML = quote["name"].toUpperCase();
 
 
         blackscreen.style.visibility = "visible";
@@ -130,16 +132,20 @@ window.onload= function(){
         //await timeout(2500);
         quote_reveal.innerHTML = quote["text"];
         fadeIn();
-        await timeout(11500);
+        await timeout(5500);
         
         if(answer == quote["name"].toUpperCase()){
+            score += 1000;
             congrats.play();
             answer_box.className = "correct-answer";
+            updateScore(score);
         }
         else{
             wrong.play();
             answer_box.className = "wrong-answer";
         }
+
+        document.getElementById("score").innerHTML = score;
 
         document.body.appendChild(answer_box);
 
@@ -151,8 +157,8 @@ window.onload= function(){
     function fadeIn() { 
         var opacity = 1; 
         var intervalID = setInterval(function() { 
-            if (opacity > 0.75) { 
-                opacity = opacity - 0.0006; 
+            if (opacity >= 0.5) { 
+                opacity = opacity - 0.01; 
                 blackscreen.style.opacity = opacity; 
             } else { 
                 clearInterval(intervalID); 
@@ -169,6 +175,26 @@ window.onload= function(){
         document.body.appendChild(img_cover);
         return img_cover;
     }
+}
+
+function updateScore(score){
+    
+	let fd = new FormData();
+
+	fd.set("fname", localStorage.getItem("q2w-fname"));
+	fd.set("lname", localStorage.getItem("q2w-lname"));
+	fd.set("food", localStorage.getItem("q2w-food"));
+	fd.set("pass", localStorage.getItem("q2w-pass"));
+	fd.set("highscore", score);
+
+	const urlEncoded = new URLSearchParams(fd).toString();
+	let a = fetch('../update-score', {
+		method: "POST",
+		body: urlEncoded,
+		headers: {
+			'Content-type' : 'application/x-www-form-urlencoded' 
+		}
+    });
 }
 
 
