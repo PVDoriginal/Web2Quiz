@@ -1,11 +1,20 @@
 let audio = new Audio("../kahoot.mp3");
+let congrats = new Audio("../congrats.mp3");
+let wrong = new Audio("../wrong.mp3");
+let audio_s1 = new Audio("../audio/audio-s1.mp3");
 const possible_colors = ['#FF7ED4', '#EE9322', '#A084E8', '#D895DA', '#FF9EAA'];
 let colors = [];
 let names = [];
+let images = [];
 let options = [];
+let quotes = [];
 
 window.onload= function(){
     const cover = document.getElementById("kahoot-cover");
+    const blackscreen = document.getElementById("blackscreen");
+    const quote_reveal = document.getElementById("quote-reveal"); 
+    blackscreen.style.visibility = "hidden";
+    blackscreen.style.opacity = "0";
     cover.onclick = (event) => {
         cover.style.visibility = "hidden";
         audio.play();
@@ -14,13 +23,19 @@ window.onload= function(){
 
     const optionsParent = document.getElementById("options");
     const search_bar = document.getElementById("search");
+    const quote_text = document.getElementById("quote");
 
-    fetch("/options.json").then(res => res.json()).then(options => {
-        names = options['names']; 
+    fetch("/quotes.json").then(res => res.json()).then(data => {
+        names = data['names']; 
+        quotes = data['quotes'];
+        images = data['images'];
         shuffle(names);
+        shuffle(quotes);
         createOptions();
+        GameLoop();
     });
 
+    let clickedOption = null;
     function createOptions(){
         if (colors.length == 0){
             for (let i = 0; i < names.length; i++){
@@ -44,6 +59,7 @@ window.onload= function(){
             options.push(option);
             option.onmouseenter = handleOptionHover;
             option.onmouseleave = handleOptionHoverOut;
+            option.onclick = (event) => {clickedOption = event.target.innerHTML;};
         }
     }
     let refreshInterval;
@@ -76,8 +92,85 @@ window.onload= function(){
         event.target.style.backgroundColor = 'transparent';
         event.target.classList.add('option-hoverout');
     }
+    
 
+    async function GameLoop(){
+        for(let i = 0; i < quotes.length; i++){
+            if (current_cover != null) current_cover.remove();
+            blackscreen.style.visibility = "hidden";
+            await Question(quotes[i]);
+            audio.currentTime = 0;
+            audio.play();
+        }
+        window.open("login.html", "_self");
+    }
+
+    const timeout = async ms => new Promise(res => setTimeout(res, ms));
+    async function Question(quote){
+        quote_text.innerHTML = quote["text"];
+        while(clickedOption == null) await timeout(10);
+        await Reveal(clickedOption, quote);
+    }
+
+    let current_cover = null;
+
+    async function Reveal(answer, quote){
+        clickedOption = null;
+        current_cover = SetCover(quote["name"]);
+        audio.pause();
+        audio.currentTime = 0;
+        audio_s1.play();
+
+        let answer_box = document.createElement("div");
+        answer_box.innerHTML = answer;
+
+
+        blackscreen.style.visibility = "visible";
+        blackscreen.style.opacity = 1;
+        //await timeout(2500);
+        quote_reveal.innerHTML = quote["text"];
+        fadeIn();
+        await timeout(11500);
+        
+        if(answer == quote["name"].toUpperCase()){
+            congrats.play();
+            answer_box.className = "correct-answer";
+        }
+        else{
+            wrong.play();
+            answer_box.className = "wrong-answer";
+        }
+
+        document.body.appendChild(answer_box);
+
+        await timeout(2500);
+        answer_box.remove();
+        quote_reveal.innerHTML = "";
+    }
+
+    function fadeIn() { 
+        var opacity = 1; 
+        var intervalID = setInterval(function() { 
+            if (opacity > 0.75) { 
+                opacity = opacity - 0.0006; 
+                blackscreen.style.opacity = opacity; 
+            } else { 
+                clearInterval(intervalID); 
+            } 
+        }, 40); 
+    } 
+
+    function SetCover(name){
+        let img_cover = document.createElement("img");
+        let img_names = images[name];
+        let img = img_names[Math.floor(Math.random() * img_names.length)];
+        img_cover.className = "cover";
+        img_cover.src = "content/images/" + img; 
+        document.body.appendChild(img_cover);
+        return img_cover;
+    }
 }
+
 
 function shuffle(array) {
     let currentIndex = array.length;

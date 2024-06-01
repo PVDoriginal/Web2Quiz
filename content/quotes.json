@@ -1,0 +1,34 @@
+{
+    "quotes": [
+		{
+			"text" : "\"<span class = \"highlight\">PROLOGUL </span> NU SE TERMINĂ NICIODATĂ\"",
+			"name" : "andrei sipos"
+		}
+	],
+	"names": [
+		"ANDREI PAUN",
+		"CEZARA BENEGUI",
+		"MARIA C. NEGRU",
+		"ANDREI SIPOS",
+		"RAZVAN SFETCU",
+		"MARIUS DUMITRAN",
+		"GRIGORE MOISIL",
+		"IULIA HIRICA",
+		"DUMITRU STAMATE",
+		"PROFA ALGEBRA",
+		"ANCA DOBROVAT",
+		"CHIRITA CLAUDIA ELENA",
+		"GEORGE? MAJERI",
+		"CRISTIAN RUSU",
+		"LAURENTIU LEUSTEAN",
+		"RADU BORIGA",
+		"JOSEPH STALIN",
+		"ROXANA BALUCEA"
+	],
+	"images":{
+		"andrei sipos":
+		[
+			"sipos1.jpg"
+		]
+	}
+}

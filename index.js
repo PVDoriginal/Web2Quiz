@@ -33,6 +33,10 @@ app.get('/kahoot.mp3', function(req, res) {
   res.sendFile(`${__dirname}/kahoot.mp3`);
 });
 
+app.get('/audio/audio-s1.mp3', function(req, res){
+  res.sendFile(`${__dirname}/audio/audio-s1.mp3`);
+});
+
 app.get('/main.html', function (req, res) {
   res.sendFile(`${__dirname}/content/main.html`);
   res.send
@@ -47,11 +51,13 @@ app.get('/main.css', function (req, res) {
   res.sendFile(`${__dirname}/content/main.css`);
 });
 
+var access_code;
 
-var access_code; 
-
-app.get('/options.json', function(req, res){
-  res.sendFile(`${__dirname}/content/options.json`)
+app.get('/quotes.json', function(req, res){
+  res.sendFile(`${__dirname}/content/quotes.json`)
+});
+app.get('/login.html', function(req, res){
+  res.sendFile(`${__dirname}/content/login.html`)
 });
 
 app.post('/form-submit', function(req, res) {
@@ -68,4 +74,21 @@ app.post('/form-submit', function(req, res) {
   console.log("code: " + access_code);
   res.status(200).send({ error: '' , access_code: access_code});
 });
+
+app.get('/content/images/sipos1.jpg', function(req, res){
+  res.sendFile(`${__dirname}/content/images/sipos1.jpg`);
+});
+
+app.get('/blackscreen.png', function(req, res){
+  res.sendFile(`${__dirname}/blackscreen.png`);
+});
+
+app.get('/congrats.mp3', function(req, res){
+  res.sendFile(`${__dirname}/congrats.mp3`);
+});
+
+app.get('/wrong.mp3', function(req, res){
+  res.sendFile(`${__dirname}/wrong.mp3`);
+});
+
 

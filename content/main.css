@@ -110,7 +110,7 @@ body{
 	cursor: default
 }
 
-#highlight{
+.highlight{
 	color: #C73659;
 }
 
@@ -119,6 +119,70 @@ body{
 	margin-top: 10vh;
 }
 
+#quote-reveal-container{
+	font-family: "Special Elite", system-ui;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 1.5em;
+	text-shadow: red 2px 5px;
+
+	position: absolute;
+	left: 0; 
+	right: 0; 
+	margin-top: 5vh;
+	margin-left: auto; 
+	margin-right: auto; 
+	width: 1500px; 
+	z-index: 4;
+}
+
+.correct-answer{
+	font-size: 1em;
+	position: absolute;
+	text-align: center;	
+	justify-content: center;
+	align-items: center;
+	font-weight: 600;
+	z-index: 4;
+	left: 0; 
+	right: 0; 
+	bottom: 10vh;
+	border-radius: 10px;
+	margin-left: auto; 
+	margin-right: auto; 
+	width: fit-content;
+	padding: 10px;
+	height: 1em;
+
+	background-color: #95c449;
+	color: white;
+}
+
+.wrong-answer{
+	font-size: 1em;
+	position: absolute;
+	text-align: center;	
+	justify-content: center;
+	align-items: center;
+	font-weight: 600;
+	z-index: 4;
+	left: 0; 
+	right: 0; 
+	bottom: 10vh;
+	border-radius: 10px;
+	margin-left: auto; 
+	margin-right: auto; 
+	width: fit-content;
+	padding: 10px;
+	height: 1em;
+
+	background-color: #d54c3f;
+	color: white;
+
+	animation-name: shake;
+	animation-duration: .1s;
+	animation-iteration-count: 5;
+}
 #quote{
 	color: #151515;
 	font-weight: 700;
@@ -126,6 +190,28 @@ body{
 	font-style: oblique;
 	font-size: 1.2em;
 	margin: 0;
+}
+
+#quote-reveal{
+	font-family: "Special Elite", system-ui;
+	font-weight: 400;
+	font-style: normal;
+
+	color: #e7e7e7;
+	font-weight: 700;
+	text-align: center;
+	font-style: oblique;
+	font-size: 1.2em;
+	margin: 0;
+
+	animation-name: shake-creepy;
+	animation-duration: 1.5s;
+	animation-delay: 1.5s;
+	animation-iteration-count: infinite;
+}
+
+#quote-reveal span{
+	color: #e7e7e7;
 }
 
 #quote:hover{
@@ -137,6 +223,21 @@ body{
 	position: absolute;
 	width: 45vw;
 	height: 30vh;
+}
+
+.cover{
+	position: absolute;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+#blackscreen{
+	filter: sepia(100%) saturate(300%) brightness(70%) hue-rotate(180deg);
+	z-index: 3;
 }
 
 #kahoot-cover img{
@@ -158,6 +259,17 @@ body{
 	animation-duration: .15s;
 	animation-iteration-count: infinite;
 }
+
+@keyframes shake-creepy {
+	0% { transform: translate(0, 0) rotate(0deg); }
+	1% { transform: translate(5px, 5px) rotate(4.5deg); }
+	1.5% { transform: translate(0, 0) rotate(0eg); }
+	2% { transform: translate(-5px, 5px) rotate(-4.5deg); }
+	3% { transform: translate(0, 0) rotate(0deg); }
+	3.1% { transform: translate(0, 0) rotate(0deg); }
+	100% { transform: translate(0, 0) rotate(0deg); }
+}
+
 
 @keyframes shake {
 	0% { transform: translate(0, 0) rotate(0deg); }
