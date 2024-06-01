@@ -42,7 +42,7 @@ window.onload= function(){
 			console.log(data);
 			handleUserExistsError(data.error);
 
-			if(data.error = "Logged In!"){ 
+			if(data.error == "Logged In!"){ 
 				score.innerHTML = "HIGHSCORE: " + data.highscore;
 				create.remove();
 				submit.remove();
