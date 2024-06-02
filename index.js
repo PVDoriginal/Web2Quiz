@@ -256,6 +256,23 @@ app.get('/content/images/stalin4.jpg', function(req, res){
 app.get('/404.png', function(req, res){
   res.sendFile(`${__dirname}/404.png`);
 });
+app.get('/wp-introduction.html', function(req, res){
+  res.sendFile(`${__dirname}/wp/wp-introduction.html`);
+});
+app.get('/wp.html', function(req, res){
+  res.sendFile(`${__dirname}/wp/wp.html`);
+});
+app.get('/wp-introduction.css', function(req, res){
+  res.sendFile(`${__dirname}/wp/wp-introduction.css`);
+});
+app.get('/bb.png', function(req, res){
+  res.sendFile(`${__dirname}/wp/bb.png`);
+});
+
+
+app.get('/404.png', function(req, res){
+  res.sendFile(`${__dirname}/404.png`);
+});
 
 
 

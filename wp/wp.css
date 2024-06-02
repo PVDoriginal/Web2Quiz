@@ -1,0 +1,1113 @@
+
+body{ 
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("unibuc.jpg");
+  	background-size: cover;
+  	overflow: hidden;
+}
+
+*{cursor: url('cursor.png'), auto;}
+*{margin: 0; padding: 0;}
+
+/*
+div, span{
+	pointer-events: none !important;
+}
+*/
+
+#game_over{
+	background-image: linear-gradient(rgba(97, 7, 1, 0.6), rgba(97, 7, 1, 0.6)), url("gameover.jpg");
+  	background-size: cover;
+  	overflow: hidden;
+	position: absolute;
+	z-index: 10;
+	width: 100%;
+	height: 100%;
+	visibility: hidden;
+}
+
+#game_over_text{
+	pointer-events: none;
+	position: absolute;
+	top: 30%;
+	font-size: 100px;
+	font-weight: bold;
+	text-align: center;
+	width: 100%;
+}
+
+#end{
+	background-image: linear-gradient(rgba(3, 148, 252, 0.2), rgba(3, 148, 252, 0.2)), url("end.jpg");
+	pointer-events: none;
+  	background-size: cover;
+  	overflow: hidden;
+	position: absolute;
+	z-index: 10;
+	width: 100%;
+	height: 100%;
+	top: -100%;
+
+	animation-fill-mode: forwards;
+
+	animation-name: end_anim;
+	animation-duration: 4s;
+	animation-delay: 115s;
+	animation-timing-function: ease-in;
+}
+
+@keyframes end_anim{
+	0%{top: -100%;}
+	100%{top: 0%}
+}
+
+#end_text{
+	pointer-events: none;
+	position: absolute;
+	color: sandybrown;
+	top: 30%;
+	font-size: 100px;
+	font-weight: bold;
+	text-align: center;
+	width: 100%;
+}
+
+#game_over:has(~ div:hover){
+	visibility: visible;
+}
+div:hover ~	#game_over{
+	visibility: visible;
+}
+#game_over:hover{
+	visibility: visible;
+}
+
+/*div{border: solid 2px red;}*/
+
+
+.rus{
+	position: absolute;
+	scale: 0.35 0.35;
+	left: -20%;
+	top: -10%;
+
+	animation-duration: 20s;
+}
+
+#rus1{animation-name: r1; animation-delay: 93s}
+#rus2{animation-name: r2; animation-delay: 93.5s}
+#rus3{animation-name: r3; animation-delay: 94s}
+#rus4{animation-name: r4; animation-delay: 94.5s}
+#rus5{animation-name: r5; animation-delay: 95s}
+#rus6{animation-name: r6; animation-delay: 95.5s}
+#rus7{animation-name: r7; animation-delay: 96s}
+#rus8{animation-name: r8; animation-delay: 96.5s}
+
+@keyframes r1{
+	0%{left: 30%; top: 100%}
+	30%{left: 30%; top: -20%; rotate: 120deg}
+	80%{left: 30%; top: -20%; rotate: 0deg}
+	100%{left: 90%; top: 100%; rotate: 120deg}
+}
+@keyframes r2{
+	0%{left: -30%; top: 50%}
+	30%{left: 80%; top: 70%; rotate: 350deg}
+	80%{left: 80%; top: 70%; rotate: 0deg}
+	100%{left: 10%; top: 100%; rotate: -350deg}
+}
+@keyframes r3{
+	0%{left: 110%; top: 30%}
+	30%{left: 60%; top: 70%; rotate: 492deg}
+	80%{left: 60%; top: 70%; rotate: 0deg}
+	100%{left: 12%; top: -100%; rotate: 812deg}
+}
+@keyframes r4{
+	0%{left: 90%; top: -100%}
+	30%{left: 20%; top: 70%; rotate: 328deg}
+	80%{left: 20%; top: 70%; rotate: 0deg}
+	100%{left: 129%; top: 30%; rotate: 238deg}
+}
+@keyframes r5{
+	0%{left: 18%; top: 100%}
+	30%{left: 75%; top: 40%; rotate: 291deg}
+	80%{left: 75%; top: 40%; rotate: 0deg}
+	100%{left: 30%; top: 130%; rotate: 931deg}
+}
+
+@keyframes r6{
+	0%{left: -110%; top: 30%}
+	30%{left: 19%; top: 50%; rotate: 293deg}
+	80%{left: 19%; top: 50%; rotate: 0deg}
+	100%{left: 129%; top: 30%; rotate: 209deg}
+}
+
+@keyframes r7{
+	0%{left: 10%; top: 120%}
+	30%{left: 10%; top: 30%; rotate: 328deg}
+	80%{left: 10%; top: 30%; rotate: 0deg}
+	100%{left: 93%; top: 100%; rotate: 901deg}
+}
+
+@keyframes r8{
+	0%{left: -100%; top: 30%}
+	30%{left: 45%; top: 0%; rotate: 328deg}
+	80%{left: 45%; top: 0%; rotate: 0deg}
+	100%{left: 133%; top: 91%; rotate: 238deg}
+}
+
+
+#moisil{
+	position: absolute;
+	scale: 0.4 0.4;
+	top: 5%;
+	left: -25%;
+
+	animation-name: moisil_anim;
+	animation-duration: 22s;
+	animation-delay: 93s;
+}
+
+@keyframes moisil_anim{
+	0%{left: -25%;}
+	20%{left: -4%;}
+	100%{left: -4%;}
+}
+
+
+.ruxi{
+	position: absolute;
+	scale: 0.7 0.95;
+	left: -30%;
+	top: 79%;
+
+	animation-name: ruxi_anim;
+	animation-duration: 5s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	animation-delay: 95s;
+}
+
+#ruxi2{
+	top: 0%;
+	rotate: 180deg;
+}
+
+
+@keyframes ruxi_anim{
+	0%{left: -10%}
+	50%{left: 110%}
+	100%{left: -10%}
+}
+
+.ruxi > img{
+	scale: 1.5 1.05;
+}
+
+#dumitran{
+	position: absolute;
+	pointer-events: none;
+	top: 30%;
+	left: 100%;
+
+	animation-name: dumitran_anim;
+	animation-duration: 20s;
+	animation-delay: 100s;
+}
+
+@keyframes dumitran_anim{
+	0%{top: 30%; left: 100%;}
+	20%{top: 30%; left: 80%}
+	90%{top: 30%; left: 80%}
+	100%{top: 30%; left: 100%;}
+}
+
+#dumitran_up{
+	position: absolute;
+	pointer-events: visible;
+	scale: 0.7 0.9;
+
+	animation-name: dumitran_shake;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+
+@keyframes dumitran_shake{
+	0%{rotate: 0}
+	30%{rotate: 15deg}
+	60%{rotate: -15deg}
+	90%{rotate: 0}
+}
+
+#dumitran_up > img{
+	rotate: 30deg;
+	scale: 1.3 1.1;
+	translate: 17% 0;
+}
+
+#dumitran_down{
+	position: absolute;
+	pointer-events: visible;
+	translate: 3vw 34vh;
+}
+
+
+#rusu_all{
+	position: absolute;
+	pointer-events: none;
+	left: 40%;
+	top: 100%;
+	animation-name: rusu_anim;
+	animation-duration: 28s;
+	animation-delay: 90s;
+	visibility: hidden;
+}
+
+@keyframes rusu_anim{
+	0%{translate: 0 0; rotate: 0; visibility: visible;}
+	5%{translate: 0vw -80vh; rotate:0}
+	90%{translate: 0vw -80vh; rotate:0; visibility: visible;}
+	100%{translate: 0vw -80vh; visibility: hidden;}
+}
+
+
+#rusu_main{
+	position: absolute;
+	pointer-events: visible;
+	scale: 0.4 0.5;
+}
+#rusu_main > img{
+	scale: 1.5 1.1;
+}
+
+.rusu_mux_wrap{
+	translate: 8vw 18vh;
+}
+
+.rusu_mux{
+	position: absolute;
+	pointer-events: all;
+	scale: 1.2 1.2;
+}
+.rusu_mux > img{
+	scale: 1.3 1.3;
+	rotate: 35deg;
+}
+
+.rusu_mux_wrap.g1{
+	animation-name: rusu_mux_1;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+#rusu_mux11_wrap{animation-delay: 93s;}
+#rusu_mux12_wrap{animation-delay: 93.05s;}
+#rusu_mux13_wrap{animation-delay: 93.1s;}
+#rusu_mux14_wrap{animation-delay: 93.15s;}
+#rusu_mux15_wrap{animation-delay: 93.2s;}
+#rusu_mux16_wrap{animation-delay: 93.25s;}
+#rusu_mux17_wrap{animation-delay: 93.3s;}
+#rusu_mux18_wrap{animation-delay: 93.35s;}
+#rusu_mux19_wrap{animation-delay: 93.4s;}
+#rusu_mux121_wrap{animation-delay: 93.45s;}
+#rusu_mux122_wrap{animation-delay: 93.5s;}
+#rusu_mux123_wrap{animation-delay: 93.55s;}
+#rusu_mux124_wrap{animation-delay: 93.6s;}
+#rusu_mux125_wrap{animation-delay: 93.65s;}
+#rusu_mux126_wrap{animation-delay: 93.7s;}
+#rusu_mux127_wrap{animation-delay: 93.75s;}
+
+
+
+@keyframes rusu_mux_1{
+	0%{translate: 8vw 28vh}
+	100%{translate: 58vw 77vh}
+}
+
+.rusu_mux_wrap.g2{
+	animation-name: rusu_mux_2;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+#rusu_mux21_wrap{animation-delay: 93s;}
+#rusu_mux22_wrap{animation-delay: 93.05s;}
+#rusu_mux23_wrap{animation-delay: 93.1s;}
+#rusu_mux24_wrap{animation-delay: 93.15s;}
+#rusu_mux25_wrap{animation-delay: 93.2s;}
+#rusu_mux26_wrap{animation-delay: 93.25s;}
+#rusu_mux27_wrap{animation-delay: 93.3s;}
+#rusu_mux28_wrap{animation-delay: 93.35s;}
+#rusu_mux29_wrap{animation-delay: 93.4s;}
+#rusu_mux221_wrap{animation-delay: 93.45s;}
+#rusu_mux222_wrap{animation-delay: 93.5s;}
+#rusu_mux223_wrap{animation-delay: 93.55s;}
+#rusu_mux224_wrap{animation-delay: 93.6s;}
+#rusu_mux225_wrap{animation-delay: 93.65s;}
+#rusu_mux226_wrap{animation-delay: 93.7s;}
+#rusu_mux227_wrap{animation-delay: 93.75s;}
+
+
+@keyframes rusu_mux_2{
+	0%{translate: 8vw 28vh}
+	100%{translate: -58vw 77vh}
+}
+
+.rusu_mux_wrap.g3{
+	animation-name: rusu_mux_3;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+#rusu_mux31_wrap{animation-delay: 93s;}
+#rusu_mux32_wrap{animation-delay: 93.05s;}
+#rusu_mux33_wrap{animation-delay: 93.1s;}
+#rusu_mux34_wrap{animation-delay: 93.15s;}
+#rusu_mux35_wrap{animation-delay: 93.2s;}
+#rusu_mux36_wrap{animation-delay: 93.25s;}
+#rusu_mux37_wrap{animation-delay: 93.3s;}
+#rusu_mux38_wrap{animation-delay: 93.35s;}
+#rusu_mux39_wrap{animation-delay: 93.4s;}
+#rusu_mux321_wrap{animation-delay: 93.45s;}
+#rusu_mux322_wrap{animation-delay: 93.5s;}
+#rusu_mux323_wrap{animation-delay: 93.55s;}
+#rusu_mux324_wrap{animation-delay: 93.6s;}
+#rusu_mux325_wrap{animation-delay: 93.65s;}
+#rusu_mux326_wrap{animation-delay: 93.7s;}
+#rusu_mux327_wrap{animation-delay: 93.75s;}
+
+
+@keyframes rusu_mux_3{
+	0%{translate: 8vw 28vh}
+	100%{translate: 70vw -60vh}
+}
+
+.rusu_mux_wrap.g4{
+	animation-name: rusu_mux_4;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+#rusu_mux41_wrap{animation-delay: 93s;}
+#rusu_mux42_wrap{animation-delay: 93.05s;}
+#rusu_mux43_wrap{animation-delay: 93.1s;}
+#rusu_mux44_wrap{animation-delay: 93.15s;}
+#rusu_mux45_wrap{animation-delay: 93.2s;}
+#rusu_mux46_wrap{animation-delay: 93.25s;}
+#rusu_mux47_wrap{animation-delay: 93.3s;}
+#rusu_mux48_wrap{animation-delay: 93.35s;}
+#rusu_mux49_wrap{animation-delay: 93.4s;}
+#rusu_mux421_wrap{animation-delay: 93.45s;}
+#rusu_mux422_wrap{animation-delay: 93.5s;}
+#rusu_mux423_wrap{animation-delay: 93.55s;}
+#rusu_mux424_wrap{animation-delay: 93.6s;}
+#rusu_mux425_wrap{animation-delay: 93.65s;}
+#rusu_mux426_wrap{animation-delay: 93.7s;}
+#rusu_mux427_wrap{animation-delay: 93.75s;}
+
+
+@keyframes rusu_mux_4{
+	0%{translate: 8vw 28vh}
+	100%{translate: -70vw -60vh}
+}
+
+#benegui2{
+	position: absolute;
+	pointer-events: none;
+	scale: 0.7 0.7;
+	left: 100%;
+	top: 0%;
+	animation-name: benegui2;
+	animation-duration: 30s;
+	animation-timing-function: linear;
+	animation-delay: 60s;
+}
+
+@keyframes benegui2{
+	0%{left: 100%; top: -67%; rotate: 180deg}
+	20%{left: 30%; rotate: 180deg}
+	27%{left: 30%; top: -67%; rotate: 150deg}
+	40%{left: 30%; top: -67%; rotate: 150deg}
+	55%{left: -50%; top: 100%; rotate: 150deg}
+	100%{left: -50%; top: 100%; rotate: 150deg}
+}
+
+#benegui2_body{
+	pointer-events: visible;
+	scale: 0.17 0.9;
+}
+
+#benegui2_body > img{
+	scale: 7 1.1;
+	translate: 130% 0;
+}
+
+#benegui2_bird{
+	pointer-events: visible;
+	scale: 0.7 0.5; 
+	translate: -2% -60%;
+}
+
+#benegui2_bird > img{
+	scale: 1.5 1.8;
+	translate: 0 -10%;
+}
+
+#leustean{
+	position: absolute;
+	left: 45%;
+	top: 100%;
+	scale: 0.5 0.8;
+	animation-name: leustean-anim;
+	animation-duration: 35s;
+	animation-delay: 50s;
+}
+
+.sipos.attack{
+	position: absolute;
+	z-index: 2;
+	scale: 0.4 0.54;
+	top: 100%;
+	left: 100%;
+	animation-duration: 25s;
+}
+
+#as1{animation-name: as1; animation-delay: 54s;}
+#as2{animation-name: as2; animation-delay: 54.2s;}
+#as3{animation-name: as3; animation-delay: 54.4s;}
+#as4{animation-name: as4; animation-delay: 54.6s;}
+#as5{animation-name: as5; animation-delay: 54.8s;}
+#as6{animation-name: as6; animation-delay: 55s;}
+#as7{animation-name: as7; animation-delay: 55.2s;}
+#as8{animation-name: as8; animation-delay: 55.4s;}
+#as9{animation-name: as9; animation-delay: 55.6s;}
+#as10{animation-name: as10; animation-delay: 55.8s;}
+#as11{animation-name: as11; animation-delay: 56s;}
+#as12{animation-name: as12; animation-delay: 56.2s;}
+#as13{animation-name: as13; animation-delay: 56.4s;}
+#as14{animation-name: as14; animation-delay: 56.6s;}
+
+@keyframes as1{
+	0%{top: 50%; left: 45% ;rotate: 0}
+	12%{top: 10%; left: 0%; rotate: 1281deg}
+	90%{top: 10%; left: 0%; rotate: 1838deg}
+	100%{top: 50%; left: 45% ;rotate: 0}
+}
+@keyframes as2{
+	0%{top: 50%; left: 45% ;rotate: 0}
+	12%{top: 30%; left: 90%; rotate: -1281deg}
+	90%{top: 30%; left: 90%; rotate: 1289deg}
+	100%{top: 50%; left: 45% ;rotate: 0}
+}
+@keyframes as3{
+	0%{top: 50%; left: 45% ;rotate: 0}
+	12%{top: 80%; left: 10%; rotate: 5232deg}
+	90%{top: 80%; left: 10%; rotate: 12390deg}
+	100%{top: 50%; left: 45% ;rotate: 0}
+}
+@keyframes as4{
+	0%{top: 50%; left: 45% ;rotate: 0}
+	12%{top: 50%; left: 87%; rotate: 1234deg}
+	90%{top: 50%; left: 87%; rotate: 12983deg}
+	100%{top: 50%; left: 45% ;rotate: 0}
+}
+@keyframes as5{
+	0%{top: 50%; left: 45% ;rotate: 0}
+	12%{top: 10%; left: 50%; rotate: 21389deg}
+	90%{top: 10%; left: 50%; rotate: 10292deg}
+	100%{top: 50%; left: 45% ;rotate: 0}
+}
+@keyframes as6{
+	0%{top: 50%; left: 45% ;rotate: 0}
+	12%{top: 45%; left: 10%; rotate: 1281deg}
+	90%{top: 45%; left: 10%; rotate: 9128deg}
+	100%{top: 50%; left: 45% ;rotate: 0}
+}
+@keyframes as7{
+	0%{top: 50%; left: 45% ;rotate: 0}
+	12%{top: 23%; left: 14%; rotate: 9237deg}
+	90%{top: 23%; left: 14%; rotate: 128deg}
+	100%{top: 50%; left: 45% ;rotate: 0}
+}
+@keyframes as8{
+	0%{top: 50%; left: 45% ;rotate: 0}
+	12%{top: 34%; left: 5%; rotate: 1234deg}
+	90%{top: 34%; left: 5%; rotate: 12983deg}
+	100%{top: 50%; left: 45% ;rotate: 0}
+}
+@keyframes as9{
+	0%{top: 50%; left: 45% ;rotate: 0}
+	12%{top: 84%; left: 87%; rotate: 1283deg}
+	90%{top: 84%; left: 87%; rotate: 5423deg}
+	100%{top: 50%; left: 45% ;rotate: 0}
+}
+@keyframes as10{
+	0%{top: 50%; left: 45% ;rotate: 0}
+	12%{top: 12%; left: 89; rotate: 34534deg}
+	90%{top: 12%; left: 89%; rotate: 213deg}
+	100%{top: 50%; left: 45% ;rotate: 0}
+}
+@keyframes as11{
+	0%{top: 50%; left: 45% ;rotate: 0}
+	12%{top: 91%; left: 58%; rotate: 2354deg}
+	90%{top: 91%; left: 58%; rotate: 54325deg}
+	100%{top: 50%; left: 45% ;rotate: 0}
+}
+@keyframes as12{
+	0%{top: 50%; left: 45% ;rotate: 0}
+	12%{top: 3%; left: 87%; rotate: 12898deg}
+	90%{top: 3%; left: 87%; rotate: 1289deg}
+	100%{top: 50%; left: 45% ;rotate: 0}
+}
+@keyframes as13{
+	0%{top: 50%; left: 45% ;rotate: 0}
+	9%{top: 3%; left: 37%; rotate: 4533deg}
+	90%{top: 3%; left: 37%; rotate: 1241249deg}
+	100%{top: 50%; left: 45% ;rotate: 0}
+}
+@keyframes as14{
+	0%{top: 50%; left: 45% ;rotate: 0}
+	12%{top: 15%; left: 94%; rotate: 1289deg}
+	90%{top: 15%; left: 94%; rotate: 143289deg}
+	100%{top: 50%; left: 45% ;rotate: 0}
+}
+
+#leustean > img{
+	scale: 2.5 1.4;
+	translate: 10% -7%;
+}
+
+@keyframes leustean-anim{
+	0%{translate: 0 0}
+	10%{translate: 0 -75vh}
+	20%{translate: 0 -71vh}
+	30%{translate: 0 -75vh}
+	40%{translate: -30vw -50vh}
+	50%{translate: 30vw -70vh}
+	60%{translate: 25vw -34vh}
+	70%{translate: -10vw -90vh}
+	80%{translate: 0 -75vh}
+	90%{translate: 0 -75vh}
+	100%{translate: 0 0}
+}
+
+.sipos.guard.g1{
+	scale: 1 0.8;
+	z-index: 10;
+	animation-name: sipos-guard1;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	animation-direction: alternate;
+}
+
+.sipos.guard.g2{
+	scale: 1 0.8;
+	z-index: 10;
+	animation-name: sipos-guard2;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	animation-direction: alternate;
+}
+
+#gsipos1{animation-delay: 0s;}
+#gsipos2{animation-delay: 0.4s;}
+#gsipos3{animation-delay: 0.8s;}
+#gsipos4{animation-delay: 1.2s;}
+#gsipos5{animation-delay: 1.6s;}
+#gsipos6{animation-delay: 2s;}
+#gsipos7{animation-delay: 2.4s;}
+#gsipos8{animation-delay: 2.8s;}
+#gsipos9{animation-delay: 3.2s;}
+#gsipos10{animation-delay: 3.6s;}
+
+#gsipos11{animation-delay: 0s;}
+#gsipos12{animation-delay: 0.4s;}
+#gsipos13{animation-delay: 0.8s;}
+#gsipos14{animation-delay: 1.2s;}
+#gsipos15{animation-delay: 1.6s;}
+#gsipos16{animation-delay: 2s;}
+#gsipos17{animation-delay: 2.4s;}
+#gsipos18{animation-delay: 2.8s;}
+#gsipos19{animation-delay: 3.2s;}
+#gsipos20{animation-delay: 3.6s;}
+
+
+@keyframes sipos-guard1{
+	0%{translate: -30% 20%}
+	100%{translate: -170% 20%}
+}
+@keyframes sipos-guard2{
+	0%{translate: 0 -10%}
+	100%{translate: -200% -10%}
+}
+
+.math{
+	visibility: hidden;
+	position: absolute;
+	translate: 0 500px;
+	pointer-events: none;
+}
+
+#math1{
+	animation-name: math-anim;
+	animation-duration: 33s;
+	animation-delay: 28s;
+}
+
+.math_head{
+	pointer-events: visible;
+	z-index: 10;
+	position: absolute;
+	translate: 75% -48%;
+	scale: 0.9 0.9;
+	rotate: 50deg;
+
+	animation-name: math-head-anim;
+	animation-duration: 5s;
+	animation-iteration-count: infinite;
+}
+.math_head > img{
+	scale: 1.15 1.15;
+}
+@keyframes math-head-anim{
+	0%{rotate: 30deg;}
+	1%{rotate: 50deg;}
+	5%{rotate: 50deg;}
+	6%{rotate: 120deg;}
+	10%{rotate: 120deg;}
+	11%{rotate: -120deg;}
+	15%{rotate: -120deg;}
+	16%{rotate: -120289deg;}
+	20%{rotate: -120289deg;}
+	20%{rotate: 5459deg;}
+	23%{rotate: 5459deg;}
+	24%{rotate: 81293deg;}
+	28%{rotate: 81293deg;}
+	29%{rotate: 1290deg;}
+	32%{rotate: 1290deg;}
+	33%{rotate: -192deg;}
+
+	45%{rotate: 12983deg;}
+	46%{rotate: -12983deg;}
+	49%{rotate: -12983deg;}
+	50%{rotate: 128988deg;}
+
+	60%{rotate: 1209deg;}
+	61%{rotate: -1209deg;}
+	66%{rotate: -1209deg;}
+	67%{rotate: 3947deg;}
+	70%{rotate: 3947deg;}
+	71%{rotate: -3997deg;}
+	75%{rotate: -3997deg;}
+	76%{rotate: -293deg;}
+
+	95%{rotate: 21343deg;}
+	96%{rotate: -21343deg;}
+	100%{rotate: 30deg;}
+}
+
+.math_body{
+	pointer-events: visible;
+	scale: 0.6 0.9;
+}
+.math_body > img{
+	scale: 1.7 1.1;
+	translate: 0 -50px;
+}
+
+@keyframes math-anim{
+	0%{translate: -30vw -30vh; visibility: visible;}
+	13%{translate: 30vw 30vh;}
+	20%{translate: 101vw -30vh;}
+	21%{translate: 101vw 100vh;}
+	27%{translate: 56vw 56vh;}
+	35%{translate: -30vw 54vh;}
+	45%{translate: 80vw -10vh; rotate: 0deg;}
+	50%{translate: 80vw -10vh; rotate: 180deg;}
+	57%{translate: -30vw -10vh; rotate: 180deg;}
+	58%{translate: -30vw 40vh; rotate: 180deg;}
+	71%{translate: 100vw 40vh; rotate: -12880deg;}
+	83%{translate: -30vw -30vh; rotate: 1232880deg;}
+	93%{translate: 80vw 90vh; rotate: -1232880deg;}
+	97%{translate: 50vw 50vh; rotate: 11892380deg; visibility: visible;}
+	100%{translate: -40vw 50vh; rotate: 11892380deg; visibility: hidden;}
+}
+
+img{
+	padding: 0;
+	margin: 0;
+    pointer-events: none;
+}
+
+#intro{
+	pointer-events: none;
+	position: absolute;
+	top: 30%;
+	font-size: 55px;
+	text-align: center;
+	width: 100%;
+	background-color: white;
+	animation-name: intro-anim;
+	animation-duration: 1000s;
+}
+
+@keyframes intro-anim{
+	0%{translate: 0 0;}
+	.3%{translate: 0 -500px;}
+}
+
+#benegui1{
+	position: absolute;
+  	scale: -0.2 0.25;
+  	animation-name: benegui1anim;
+  	animation-duration: 30s;
+  	animation-iteration-count: 3;
+  	animation-timing-function: linear;
+  	animation-delay: 4s;
+  	visibility: hidden;
+}
+#benegui1 > img{
+	box-sizing: border-box;
+	position: relative;
+	scale: -1.8 1.5;
+}
+
+#beneguimouth1{
+	pointer-events: none;
+	scale: -2 2;
+	translate: -73% -3250%;
+	animation-name: beneguimouth1;
+	animation-duration: 7s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes benegui1anim{
+	0%{translate: -40vw 0vh; visibility: visible;}
+	39%{translate: 90vw 0vh}
+	100%{translate: 90vw 0vh; visibility: visible;}
+}
+
+@keyframes beneguimouth1{
+	0%{rotate: 0}
+	25%{rotate: .9deg}
+	50%{rotate: -.9deg}
+	75%{rotate: .9deg}
+	0%{rotate: 0}
+}
+
+.broccoli{
+	visibility: hidden;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	scale: 0.01 0.1;
+  	animation-duration: 30s;
+  	animation-timing-function: linear;
+}
+
+#broccoli1{
+  	animation-name: broccolianim1;
+  	animation-iteration-count: 3;
+  	animation-delay: 4s;
+}
+#broccoli2{
+  	animation-name: broccolianim2;
+  	animation-iteration-count: 3;
+  	animation-delay: 4s;
+}
+#broccoli3{
+  	animation-name: broccolianim3;
+  	animation-iteration-count: 3;
+  	animation-delay: 4s;
+}
+#broccoli4{
+  	animation-name: broccolianim4;
+  	animation-iteration-count: 2;
+  	animation-delay: 33s;
+}
+#broccoli5{
+  	animation-name: broccolianim5;
+  	animation-iteration-count: 2;
+  	animation-delay: 33s;
+}
+#broccoli6{
+  	animation-name: broccolianim6;
+  	animation-iteration-count: 2;
+  	animation-delay: 33s;
+}
+
+.broccoli > img{
+	scale: 15 1.5;
+}
+
+@keyframes broccolianim1{
+	0%{translate: -25vw 40vh; visibility: visible;}
+	21%{translate: 40vw 40vh; rotate: 0deg}
+	25%{translate: -10vw 100vh; rotate: 700deg}
+	99%{translate: -10vw 100vh; rotate: 700deg}
+	100%{translate: 100vw 40vh; visibility: visible;}
+}
+@keyframes broccolianim2{
+	0%{translate: -20vw 42vh; visibility: visible;}
+	26%{translate: 53vw 42vh; rotate: 0deg}
+	30%{translate: 50vw -100vh; rotate: -700deg}
+	100%{translate: 50vw -100vh; rotate: -700deg}
+}
+@keyframes broccolianim3{
+	0%{translate: -26vw 50vh; visibility: visible;}
+	33%{translate: 76vw 50vh; rotate: 0deg}
+	40%{translate: -25vw -70vh; rotate: 700deg}
+	100%{translate: 100vw -100vh; rotate: 700deg}
+}
+@keyframes broccolianim4{
+	0%{translate: -29vw 47vh; visibility: visible;}
+	38%{translate: 83vw 47vh; rotate: 0deg}
+	45%{translate: -30vw -10vh; rotate: 900deg}
+	100%{translate: -30vw -10vh; rotate: 900deg}
+}
+@keyframes broccolianim5{
+	0%{translate: -21vw 49vh; visibility: visible;}
+	20%{translate: 50vw 49vh; rotate: 0deg}
+	30%{translate: -30vw -60vh; rotate: 700deg}
+	100%{translate: -30vw -60vh; rotate: 700deg}
+}
+@keyframes broccolianim6{
+	0%{translate: -30vw 45vh; visibility: visible;}
+	29%{translate: 70vw 45vh; rotate: 0deg}
+	36%{translate: -30vw -20vh; rotate: 700deg}
+	100%{translate: -30vw -20vh; rotate: 700deg}
+}
+
+.paun{
+	left: 50%;
+	top: 110%;
+	position: absolute;
+}
+
+#paun-body{
+  	scale: 0.6 0.9;
+	animation-name: paun1;
+	animation-duration: 20s;
+	animation-delay: 0s;
+	animation-iteration-count: 4;
+}
+#paun-body2{
+  	scale: 0.6 0.9;
+	rotate: 180deg;
+	animation-name: paun2;
+	animation-duration: 20s;
+	animation-delay: 20s;
+	animation-iteration-count: 3;
+}
+#paun-body3{
+  	scale: 0.6 0.9;
+	rotate: 180deg;
+	animation-name: paun3;
+	animation-duration: 20s;
+	animation-delay: 40s;
+	animation-iteration-count: 2;
+}
+#paun-body4{
+  	scale: 0.6 0.9;
+	animation-name: paun4;
+	animation-duration: 20s;
+	animation-delay: 60s;
+	animation-iteration-count: 1;
+}
+
+
+#paun-body > img, #paun-body2 > img, #paun-body3 > img, #paun-body4 > img{
+	box-sizing: border-box;
+	position: relative;
+	scale: 2.1 1.3;
+}
+
+@keyframes paun1{
+	0%{translate: 0}
+	20%{translate: 0 -50vh}
+	40%{translate: 0}
+}
+@keyframes paun2{
+	0%{translate: -25vw -185vh}
+	20%{translate: -25vw -125vh}
+	40%{translate: -25vw -185vh}
+	100%{translate: -25vw -185vh}
+}
+@keyframes paun3{
+	0%{translate: 25vw -185vh}
+	20%{translate: 25vw -125vh}
+	40%{translate: 25vw -185vh}
+	100%{translate: 25vw -185vh}
+}
+@keyframes paun4{
+	0%{translate: -35vw 0}
+	20%{translate: -35vw -50vh}
+	40%{translate: -35vw 0}
+	100%{translate: -35vw 0}
+}
+
+#paun-leye{
+	scale: 1.2 1.2;
+	pointer-events: none;
+	animation-name: paun-leye;
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
+}
+#paun-reye{
+	scale: 1.2 1.2;
+	pointer-events: none;
+	animation-name: paun-reye;
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes paun-leye{
+	0%{translate: 68% -5250%}
+	25%{translate: 65% -5250%}
+	50%{translate: 71% -5250%}
+	75%{translate: 65% -5250%}
+	100%{translate: 68% -5250%}
+}
+@keyframes paun-reye{
+	0%{translate: 38% -5350%}
+	25%{translate: 35% -5350%}
+	50%{translate: 40% -5350%}
+	75%{translate: 35% -5350%}
+	100%{translate: 38% -5350%}
+}
+.sipos{
+	position: absolute;
+  	scale: 0.5 0.6;
+	left: 100%;
+	top: 100%;
+}
+
+.sipos > img{
+	box-sizing: border-box;
+	position: relative;
+	scale: 2.1 1.5;
+}
+
+
+#sipos1{
+  	animation-name: sipos1;
+  	animation-delay: 13s;
+  	animation-duration: 10s;
+}
+#sipos2{
+  	animation-name: sipos2;
+  	animation-delay: 16s;
+  	animation-duration: 9s;
+}
+#sipos3{
+  	animation-name: sipos3;
+  	animation-delay: 16.2s;
+  	animation-duration: 9s;
+}
+#sipos4{
+  	animation-name: sipos4;
+  	animation-delay: 16.4s;
+  	animation-duration: 9s;
+}
+#sipos5{
+  	animation-name: sipos5;
+  	animation-delay: 16.6s;
+  	animation-duration: 9s;
+}
+#sipos6{
+  	animation-name: sipos6;
+  	animation-delay: 16.8s;
+  	animation-duration: 9s;
+}
+#sipos7{
+  	animation-name: sipos7;
+  	animation-delay: 17s;
+  	animation-duration: 9s;
+}
+#sipos8{
+  	animation-name: sipos8;
+  	animation-delay: 17.2s;
+  	animation-duration: 9s;
+}
+#sipos9{
+  	animation-name: sipos9;
+  	animation-delay: 17.4s;
+  	animation-duration: 9s;
+}
+
+@keyframes sipos1{
+	0%{translate: 0}
+	25%{translate:-11vw -50vh}
+	90%{translate:-11vw -50vh}
+	100%{translate: 0}
+}
+@keyframes sipos2{
+	0%{translate: -12vw -80vh}
+	30%{translate: -12vw -80vh}
+	45%{translate: -100vw -80vh; rotate: 0deg}
+	90%{translate: -10vw -30vh; rotate: 45deg}
+}
+@keyframes sipos3{
+	0%{translate: -13vw -90vh}
+	30%{translate: -13vw -90vh}
+	45%{translate: -100vw -90vh; rotate: 0deg}
+	90%{translate: -10vw -30vh; rotate: 45deg}
+}
+@keyframes sipos4{
+	0%{translate: -12vw -25vh}
+	30%{translate: -12vw -25vh}
+	45%{translate: -100vw -25vh; rotate: 0deg}
+	90%{translate: -1vw -50vh; rotate: -30deg}
+}
+@keyframes sipos5{
+	0%{translate: -20vw -35vh}
+	30%{translate: -20vw -35vh}
+	45%{translate: -100vw -35vh; rotate: 0deg}
+	90%{translate: -15vw -10vh; rotate: 120deg}
+}
+@keyframes sipos6{
+	0%{translate: -15vw -30vh}
+	30%{translate: -15vw -30vh}
+	45%{translate: -100vw -30vh; rotate: 0deg}
+	90%{translate: -12vw -90vh; rotate: -120deg}
+}
+@keyframes sipos7{
+	0%{translate: -10vw -35vh}
+	30%{translate: -10vw -35vh}
+	45%{translate: -100vw -35vh; rotate: 0deg}
+	90%{translate: -11vw -50vh; rotate: 150deg}
+}
+@keyframes sipos8{
+	0%{translate: -15vw -89vh}
+	30%{translate: -15vw -89vh}
+	45%{translate: -100vw -89vh; rotate: 0deg}
+	90%{translate: -10vw -80vh; rotate: 110deg}
+}
+@keyframes sipos9{
+	0%{translate: -18vw -75vh}
+	30%{translate: -18vw -75vh}
+	45%{translate: -100vw -75vh; rotate: 0deg}
+	90%{translate: -10vw -70vh; rotate: -69deg}
+}
+
+/*div:has(~ #game_over:hover), span:has(~ #game_over:hover){
+	animation-name: emptyanim;
+}
+#game_over:hover ~ div, #game_over:hover ~ span{
+	animation-name: emptyanim;
+}
+
+div:has(~ #game_over:hover) div{
+	animation-name: emptyanim;
+}*/
+
+body:not(:hover) div, body:not(:hover) span{
+	animation-name: emptyanim !important;
+}
+
+@keyframes emptyanim{}

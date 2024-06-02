@@ -1,0 +1,119 @@
+body, html{
+	background-color: #121212;
+	padding: 0;
+	margin: 0;
+	overflow-x: hidden;
+}
+
+html::-webkit-scrollbar{
+	display: none;
+}
+
+*{
+	color: #f9f8ff;
+	font-family: helvetica, sans-serif;
+}
+
+#title{
+	text-align: center;
+	font-size: 50px;
+	padding-top: 1%;
+	font-weight: bold;
+	text-shadow: 1px 1px 2px red, 0 0 1em #f9f8ff, 0 0 0.2em blue;
+}
+
+section{
+	font-size: 25px;
+	padding-left: 2%;
+	padding-bottom: 1vh;
+}
+
+h2{
+	font-size: 40px;
+}
+
+#game{
+  	margin: 0;
+  	width: 100%;
+  	heigth: 100vh;
+  	border: 0
+  	padding: 0;
+}
+
+iframe{
+	pointer-events: visible;	
+	padding: 0;
+	margin: 0;
+	width: 101vw;
+	height: 100vh;
+	translate: -1vw 0;
+	border-top: dotted 3px #33e823;
+	border-bottom: dotted 3px #33e823;
+}
+
+.warning{
+	text-shadow: red 2px 5px;
+}
+
+#t1{
+	color: #7a69f7; 
+	text-shadow: #7a69f7 1px 0 10px;
+}
+
+#t2{
+	color: #54d052;
+	text-shadow: #54d052 1px 0 10px;
+}
+
+#t3{
+	color: #e8e823;
+	text-shadow: #e8e823 1px 0 10px;
+}
+
+.dropbtn {
+  background-color: #774fe9;
+  border-radius: 50px;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: absolute;
+  right: 0.3%;
+  top: 1%;
+  scale: 0.7 0.7;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3719e0;
+}
+#smth, #smth *{
+	color: black;
+}
+

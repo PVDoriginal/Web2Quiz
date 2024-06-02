@@ -311,6 +311,11 @@ button:focus{
 	bottom: 5vh;
 	left: 42vw;
 }
+#link2{
+	position: absolute;
+	bottom: 10vh;
+	left: 37vw;
+}
 
 a{
 	font-size: 0.8em;
