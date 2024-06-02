@@ -265,8 +265,81 @@ app.get('/wp.html', function(req, res){
 app.get('/wp-introduction.css', function(req, res){
   res.sendFile(`${__dirname}/wp/wp-introduction.css`);
 });
+app.get('/wp.css', function(req, res){
+  res.sendFile(`${__dirname}/wp/wp.css`);
+});
+
 app.get('/bb.png', function(req, res){
   res.sendFile(`${__dirname}/wp/bb.png`);
+});
+app.get('/benegui1.png', function(req, res){
+  res.sendFile(`${__dirname}/wp/benegui1.png`);
+});
+app.get('/benegui2.png', function(req, res){
+  res.sendFile(`${__dirname}/wp/benegui2.png`);
+});
+app.get('/beneguimouth1.png', function(req, res){
+  res.sendFile(`${__dirname}/wp/beneguimouth1.png`);
+});
+app.get('/broccoli.png', function(req, res){
+  res.sendFile(`${__dirname}/wp/broccoli.png`);
+});
+app.get('/cursor.png', function(req, res){
+  res.sendFile(`${__dirname}/wp/cursor.png`);
+});
+app.get('/dumitran1.png', function(req, res){
+  res.sendFile(`${__dirname}/wp/dumitran1.png`);
+});
+app.get('/dumitran2.png', function(req, res){
+  res.sendFile(`${__dirname}/wp/dumitran2.png`);
+});
+app.get('/eng.jpg', function(req, res){
+  res.sendFile(`${__dirname}/wp/end.jpg`);
+});
+app.get('/gameover.jpg', function(req, res){
+  res.sendFile(`${__dirname}/wp/gameover.jpg`);
+});
+app.get('/leustean.png', function(req, res){
+  res.sendFile(`${__dirname}/wp/leustean.png`);
+});
+app.get('/math_body.png', function(req, res){
+  res.sendFile(`${__dirname}/wp/math_body.png`);
+});
+app.get('/math_head.png', function(req, res){
+  res.sendFile(`${__dirname}/wp/math_head.png`);
+});
+app.get('/moisil.png', function(req, res){
+  res.sendFile(`${__dirname}/wp/moisil.png`);
+});
+app.get('/paun-rhand.png', function(req, res){
+  res.sendFile(`${__dirname}/wp/paun-rhand.png`);
+});
+app.get('/paun-lefteye.png', function(req, res){
+  res.sendFile(`${__dirname}/wp/paun-lefteye.png`);
+});
+app.get('/paun-body.png', function(req, res){
+  res.sendFile(`${__dirname}/wp/paun-body.png`);
+});
+app.get('/paun-righteye.png', function(req, res){
+  res.sendFile(`${__dirname}/wp/paun-righteye.png`);
+});
+app.get('/russ.png', function(req, res){
+  res.sendFile(`${__dirname}/wp/russ.png`);
+});
+app.get('/rusumain.png', function(req, res){
+  res.sendFile(`${__dirname}/wp/rusumain.png`);
+});
+app.get('/rusumux.png', function(req, res){
+  res.sendFile(`${__dirname}/wp/rusumux.png`);
+});
+app.get('/ruxi.png', function(req, res){
+  res.sendFile(`${__dirname}/wp/ruxi.png`);
+});
+app.get('/sipos1.png', function(req, res){
+  res.sendFile(`${__dirname}/wp/sipos1.png`);
+});
+app.get('/unibuc.jpg', function(req, res){
+  res.sendFile(`${__dirname}/wp/unibuc.jpg`);
 });
 
 
