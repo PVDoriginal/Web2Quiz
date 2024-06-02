@@ -116,7 +116,7 @@ body{
 
 #quote-container{
 	margin: 0;
-	margin-top: 10vh;
+	margin-top: 20vh;
 }
 
 #quote-reveal-container{
@@ -302,4 +302,33 @@ body{
 	border-radius: 10px;
 	padding: 10px;
 	margin: 0;
+}
+
+#back{
+	position: absolute;
+	left: 2vw;
+	top: 1vh;
+	text-align: center;
+	width: 6em;
+	background-color: #15F5BA;
+	color: #F0F3FF;
+	border-radius: 10px;
+	padding: 10px;
+	margin: 0;
+}
+#count{
+	position: absolute;
+	top: 1vh;
+	left: 46vw;
+	text-align: center;
+	width: 6em;
+	background-color: #15F5BA;
+	color: #F0F3FF;
+	border-radius: 10px;
+	padding: 10px;
+	margin: 0;
+}
+
+#back:hover{
+	cursor: default;
 }

@@ -25,7 +25,7 @@
 			"name" : "cezara benegui"
 		},	
 		{
-			"text" : "\"\"NIMIC\" NU EXISTĂ\"",
+			"text" : "\"<span class = \"highlight\">\"NIMIC\"</span> NU EXISTĂ\"",
 			"name" : "cezara benegui"
 		},	
 		{
@@ -59,10 +59,6 @@
 		{
 			"text" : "\"LA EXAMEN VĂ ÎNTREB DESPRE CE <span class = \"highlight\">PĂSĂRI </span> AM VORBIT LA CURS\"",
 			"name" : "cezara benegui"
-		},
-		{
-			"text" : "\"TOATE PUNCTELE ALEA I LE DAU, DAR ZIC: <span class = \"highlight\">FRAIER</span>\"",
-			"name" : "andrei paun"
 		},
 		{
 			"text" : "\"AM SUPER CAZURI P-AICI\"",
@@ -125,10 +121,6 @@
 			"name" : "andrei paun"
 		},
 		{
-			"text" : "\"AM AJUNS ÎN <span class = \"highlight\">BROASCĂ</span>\"",
-			"name" : "andrei paun"
-		},
-		{
 			"text" : "\"HOPCROFT E <span class = \"highlight\">HEAPSORT</span>, VI-L DAU PE <span class = \"highlight\">BUBBLE SORT</span>\"",
 			"name" : "andrei paun"
 		},
@@ -177,7 +169,11 @@
 			"name" : "andrei paun"
 		},
 		{
-			"text" : "\"NU POT SĂ-L ATING PE A. ĂSTA MOARE AICI. <span class = \"highlight\">FASCISM</span>\"",
+			"text" : "\"NU POT SĂ-L ATING PE A. ĂSTA <span class = \"highlight\">MOARE</span> AICI\"",
+			"name" : "andrei paun"
+		},
+		{
+			"text" : "\"<span class = \"highlight\"FASCISM.</span>\"",
 			"name" : "andrei paun"
 		},
 		{
@@ -327,6 +323,46 @@
 		{
 			"text" : "\"FAC MINIMUL ȘI MINIMUL E MINIMUL\"",
 			"name" : "marius dumitran"
+		},
+		{
+			"text" : "\"ÎN <span class = \"highlight\">VIAȚĂ </span>ESTE BINE SĂ-ȚI ALEGI BINE PRIETENII\"",
+			"name" : "anca dobrovat"
+		},
+		{
+			"text" : "\"VARIABILĂ PRIVATĂ ÎNSEAMNĂ CĂ AI <span class = \"highlight\">PICAT </span>EXAMENUL\"",
+			"name" : "anca dobrovat"
+		},
+		{
+			"text" : "\"VARIABILĂ PRIVATĂ ÎNSEAMNĂ CĂ AI <span class = \"highlight\">PICAT </span>EXAMENUL\"",
+			"name" : "anca dobrovat"
+		},
+		{
+			"text" : "\"<span class = \"highlight\">TRIVIAL!</span>\"",
+			"name" : "laurentiu leustean"
+		},
+		{
+			"text" : "\"<span class = \"highlight\">NONSENS!</span>\"",
+			"name" : "laurentiu leustean"
+		},
+		{
+			"text" : "\"<span class = \"highlight\">*..SILENCE..*</span>\"",
+			"name" : "laurentiu leustean"
+		},
+		{
+			"text" : "\"NU CONTEAZĂ CINE <span class = \"highlight\">VOTEAZĂ. </span>CONTEAZĂ CINE NUMĂRĂ <span class = \"highlight\">VOTURILE</span>\"",
+			"name" : "joseph stalin"
+		},
+		{
+			"text" : "\"<span class = \"highlight\">DESTIN? </span>ACEASTĂ NOȚIUNE ESTE MISTICĂ, ESTE <span class = \"highlight\">NONSENS</span>\"",
+			"name" : "joseph stalin"
+		},
+		{
+			"text" : "\"DISPARE <span class = \"highlight\">OMUL</span>, DISPARE ȘI <span class = \"highlight\">PROBLEMA</span>\"",
+			"name" : "joseph stalin"
+		}, 
+		{
+			"text" : "\"<span class = \"highlight\">MALLOC, CALLOC, </span>NU TRECI DELOC\"",
+			"name" : "smit andrei oanea"
 		}
 	],
 	"names": [
@@ -339,15 +375,17 @@
 		"GRIGORE MOISIL",
 		"IULIA HIRICA",
 		"DUMITRU STAMATE",
-		"PROFA ALGEBRA",
+		"GABRIELA PETCU",
 		"ANCA DOBROVAT",
 		"CHIRITA CLAUDIA ELENA",
-		"GEORGE? MAJERI",
+		"GABRIEL MAJERI",
+		"MCMARIUS",
 		"CRISTIAN RUSU",
 		"LAURENTIU LEUSTEAN",
 		"RADU BORIGA",
 		"JOSEPH STALIN",
-		"ROXANA BALUCEA"
+		"ROXANA BALUCEA",
+		"SMIT ANDREI OANEA"
 	],
 	"images":{
 		"andrei sipos":
@@ -403,6 +441,27 @@
 			"dumitran1.jpg",
 			"dumitran2.jpg",
 			"dumitran3.jpg"
+		],
+		"anca dobrovat":
+		[
+			"dobrovat1.jpg"
+		],
+		"laurentiu leustean":
+		[
+			"leustean1.png",
+			"leustean2.png"
+		],
+		"joseph stalin":
+		[
+			"stalin1.jpg",
+			"stalin2.jpg",
+			"stalin3.jpg",
+			"stalin4.jpg"
+		],
+		"smit andrei oanea":
+		[
+			"oanea1.jpg",
+			"oanea2.jpg"
 		]
 	}
 }

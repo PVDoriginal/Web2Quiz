@@ -61,6 +61,10 @@ app.get('/main.css', function (req, res) {
   res.sendFile(`${__dirname}/content/main.css`);
 });
 
+app.get('/404.css', function (req, res) {
+  res.sendFile(`${__dirname}/content/404.css`);
+});
+
 var access_code;
 
 app.get('/quotes.json', function(req, res){
@@ -102,7 +106,9 @@ app.post('/user-login', function(req, res){
 app.post('/update-score', function(req, res){
   let name = req.body.fname + "_" + req.body.lname;
   var user = JSON.parse(fs.readFileSync(`users/${name}.json`, 'utf8'));
-  user["highscore"] = req.body.highscore;
+
+  if(req.body.highscore > user["highscore"]) user["highscore"] = req.body.highscore;
+
   fs.writeFile(`users/${name}.json`, JSON.stringify(user), (error) => {
     if (error) throw error;
   });
@@ -225,4 +231,35 @@ app.get('/content/images/dumitran2.jpg', function(req, res){
 });
 app.get('/content/images/dumitran3.jpg', function(req, res){
   res.sendFile(`${__dirname}/content/images/dumitran3.jpg`);
+});
+app.get('/content/images/dobrovat1.jpg', function(req, res){
+  res.sendFile(`${__dirname}/content/images/dobrovat1.jpg`);
+});
+app.get('/content/images/leustean1.png', function(req, res){
+  res.sendFile(`${__dirname}/content/images/leustean1.png`);
+});
+app.get('/content/images/leustean2.png', function(req, res){
+  res.sendFile(`${__dirname}/content/images/leustean2.png`);
+});
+app.get('/content/images/stalin1.jpg', function(req, res){
+  res.sendFile(`${__dirname}/content/images/stalin1.jpg`);
+});
+app.get('/content/images/stalin2.jpg', function(req, res){
+  res.sendFile(`${__dirname}/content/images/stalin2.jpg`);
+});
+app.get('/content/images/stalin3.jpg', function(req, res){
+  res.sendFile(`${__dirname}/content/images/stalin3.jpg`);
+});
+app.get('/content/images/stalin4.jpg', function(req, res){
+  res.sendFile(`${__dirname}/content/images/stalin4.jpg`);
+});
+app.get('/404.png', function(req, res){
+  res.sendFile(`${__dirname}/404.png`);
+});
+
+
+
+app.use(function(req, res) {
+  res.status(404);
+  res.sendFile(`${__dirname}/content/404.html`);
 });

@@ -303,4 +303,16 @@ button:focus{
 	position: absolute;
 	visibility: hidden;
 	left: 45vw;
+	top: 45vh;
+}
+
+#link{
+	position: absolute;
+	bottom: 5vh;
+	left: 42vw;
+}
+
+a{
+	font-size: 0.8em;
+	color: #DC5F00;
 }

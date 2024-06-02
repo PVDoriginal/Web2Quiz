@@ -14,6 +14,7 @@ window.onload= function(){
 	const play = document.getElementById("btn3");
 	const score = document.getElementById("score");
 
+	if(btn1 == null) console.log("wtf");
 	form.addEventListener("submit", async(event)=>{event.preventDefault()});
 
 	play.addEventListener("click", (event)=>{
@@ -46,6 +47,7 @@ window.onload= function(){
 				score.innerHTML = "HIGHSCORE: " + data.highscore;
 				create.remove();
 				submit.remove();
+				form.remove();
 				play.style.visibility = "visible";
 			}
 		});

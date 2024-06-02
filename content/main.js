@@ -10,6 +10,7 @@ let quotes = [];
 let audio_s = [new Audio("../audio/audio-s1.mp3"), new Audio("../audio/audio-s2.mp3"), new Audio("../audio/audio-s3.mp3"), new Audio("../audio/audio-s4.mp3")];
 
 let score = 0;
+let count = 0;
 
 window.onload= function(){
     const cover = document.getElementById("kahoot-cover");
@@ -32,6 +33,9 @@ window.onload= function(){
         quotes = data['quotes'];
         images = data['images'];
         shuffle(names);
+        console.log(quotes.length);
+        shuffle(quotes);
+        shuffle(quotes);
         shuffle(quotes);
         createOptions();
         GameLoop();
@@ -79,6 +83,19 @@ window.onload= function(){
         }
     });
 
+    const back = document.getElementById("back");
+    back.onmouseenter = function(event){
+        event.target.classList.remove('option-hoverout');
+        event.target.classList.add('option-hover');
+    };
+    back.onmouseleave = function(event){
+        event.target.classList.remove('option-hover');
+        event.target.classList.add('option-hoverout');
+    };
+    back.onmousedown = function(event){
+        window.open("login.html", "_self");
+    }
+
     function handleOptionHover(event){
         event.target.classList.remove('option-hoverout');
 
@@ -95,12 +112,18 @@ window.onload= function(){
         event.target.classList.add('option-hoverout');
     }
     
+    const count_text = document.getElementById("count");
 
     async function GameLoop(){
         for(let i = 0; i < quotes.length; i++){
             if (current_cover != null) current_cover.remove();
             blackscreen.style.visibility = "hidden";
             await Question(quotes[i]);
+
+            count++;
+            count_text.innerHTML = count + "/20";
+            if(count == 20) break;
+
             audio.currentTime = 0;
             audio.play();
         }

@@ -1,0 +1,20 @@
+html{
+	overflow: hidden;
+}
+
+body{
+	background-image: url("../404.png");
+}
+
+div{  
+	position: absolute; 
+	left: 0; 
+	right: 0; 
+	margin-left: auto; 
+	margin-right: auto;
+	font-size: 3em;
+	color: red;
+	top: 45vh;
+	pointer-events: none;
+	width: 100px; /* Need a specific value to work */
+}
