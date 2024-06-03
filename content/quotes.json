@@ -383,6 +383,22 @@
 		{
 			"text" : "\"CARE ESTE CMMDC-UL DINTRE <span class = \"highlight\">Ă ȘI Ț</span>?\"",
 			"name" : "gabriela petcu"
+		}, 
+		{
+			"text" : "\"2 <span class = \"highlight\">CENTRE CONCENTRICE</span>\"",
+			"name" : "chirita claudia elena"
+		}, 
+		{
+			"text" : "\"CE ESTE UN <span class = \"highlight\">COOKIE</span>?\"",
+			"name" : "chirita claudia elena"
+		}, 
+		{
+			"text" : "\"EU ÎNTREB, <span class = \"highlight\">BILA </span>RĂSPUNDE\"",
+			"name" : "chirita claudia elena"
+		}, 
+		{
+			"text" : "\"<span class = \"highlight\">BILĂ, BILĂ, </span>OARE IAU 10 LA COLOCVIU? NYEH!\"",
+			"name" : "chirita claudia elena"
 		}
 	],
 	"names": [
@@ -486,6 +502,10 @@
 		"gabriela petcu":
 		[
 			"petcu1.jpg"
+		],
+		"chirita claudia elena":
+		[
+			"chirita1.jpg"
 		]
 	}
 }
