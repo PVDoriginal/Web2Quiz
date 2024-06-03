@@ -46,9 +46,6 @@ window.onload= function(){
         });
 
         shuffle(quotes);
-
-        removePaun(quotes, 30);
-        shuffle(quotes);
         createOptions();
         GameLoop();
     });
