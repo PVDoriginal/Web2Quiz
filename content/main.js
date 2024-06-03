@@ -36,7 +36,17 @@ window.onload= function(){
         console.log(quotes.length);
         shuffle(quotes);
         shuffle(quotes);
+
+        let count = 30;
+        quotes.forEach(function(item, index, object) {
+            if (count > 0 && item['name'] === 'andrei paun') {
+              object.splice(index, 1);
+              count--;
+            }
+        });
+
         shuffle(quotes);
+
         removePaun(quotes, 30);
         shuffle(quotes);
         createOptions();
@@ -200,21 +210,6 @@ window.onload= function(){
         document.body.appendChild(img_cover);
         return img_cover;
     }
-}
-
-function removePaun(quotes, count){
-    shuffle(quotes);
-    shuffle(quotes);
-    console.log(quotes);
-    for (let i = 0; i < quotes.length && count > 0; i++) {
-        console.log(i);
-        if (quotes[i]["name"] == "andrei paun"){
-            delete quotes[i];
-            count--;
-            i--;
-        }
-    }
-    return quotes;
 }
 
 function updateScore(score){
