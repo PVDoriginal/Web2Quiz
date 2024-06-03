@@ -37,6 +37,8 @@ window.onload= function(){
         shuffle(quotes);
         shuffle(quotes);
         shuffle(quotes);
+        removePaun(quotes, 30);
+        shuffle(quotes);
         createOptions();
         GameLoop();
     });
@@ -197,6 +199,18 @@ window.onload= function(){
         img_cover.src = "content/images/" + img; 
         document.body.appendChild(img_cover);
         return img_cover;
+    }
+}
+
+function removePaun(quotes, count){
+    shuffle(quotes);
+    shuffle(quotes);
+    for (let i = 0; i < quotes.length && count > 0; i++) {
+        if (quotes[i]["name"] == "andrei paun"){
+            delete quotes[i]; 
+            count--;
+            i--;
+        }
     }
 }
 

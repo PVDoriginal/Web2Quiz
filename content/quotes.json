@@ -89,10 +89,6 @@
 			"name" : "andrei paun"
 		},
 		{
-			"text" : "\"AJUNGEM LA UN DFA <span class = \"highlight\">GRAS </span>- ÎN FINE\"",
-			"name" : "andrei paun"
-		},
-		{
 			"text" : "\"AM UN <span class = \"highlight\">GRAF </span>NENOROCIT\"",
 			"name" : "andrei paun"
 		},
@@ -181,7 +177,7 @@
 			"name" : "andrei paun"
 		},
 		{
-			"text" : "\"<span class = \"highlight\"FASCISM.</span>\"",
+			"text" : "\"<span class = \"highlight\">FASCISM.</span>\"",
 			"name" : "andrei paun"
 		},
 		{
@@ -246,6 +242,14 @@
 		},
 		{
 			"text" : "\"SE IA DIN <span class = \"highlight\">ALOCAȚIE</span>\"",
+			"name" : "razvan sfetcu"
+		},
+		{
+			"text" : "\"<span class = \"highlight\">CETĂȚEANUL </span> DIN PRIMA BANCĂ, SĂ RĂSPUNDĂ!\"",
+			"name" : "razvan sfetcu"
+		},
+		{
+			"text" : "\"ĂSTA E SUBIECT DE CORIGENȚĂ LA <span class = \"highlight\">IALOMIȚA</span>\"",
 			"name" : "razvan sfetcu"
 		},
 		{
@@ -371,6 +375,14 @@
 		{
 			"text" : "\"<span class = \"highlight\">MALLOC, CALLOC, </span>NU TRECI DELOC\"",
 			"name" : "smit andrei oanea"
+		}, 
+		{
+			"text" : "\"A FOST NEVOIE DE 4 OAMENI SĂ-L ÎNLOCUIASCĂ PE <span class = \"highlight\">DOMNUL STAMATE</span>\"",
+			"name" : "gabriela petcu"
+		}, 
+		{
+			"text" : "\"CARE ESTE CMMDC-UL DINTRE <span class = \"highlight\">Ă ȘI Ț</span>?\"",
+			"name" : "gabriela petcu"
 		}
 	],
 	"names": [
@@ -470,6 +482,10 @@
 		[
 			"oanea1.jpg",
 			"oanea2.jpg"
+		],
+		"gabriela petcu":
+		[
+			"petcu1.jpg"
 		]
 	}
 }

@@ -259,6 +259,9 @@ app.get('/content/images/oanea1.jpg', function(req, res){
 app.get('/content/images/oanea2.jpg', function(req, res){
   res.sendFile(`${__dirname}/content/images/oanea2.jpg`);
 });
+app.get('/content/images/petcu1.jpg', function(req, res){
+  res.sendFile(`${__dirname}/content/images/petcu1.jpg`);
+});
 app.get('/404.png', function(req, res){
   res.sendFile(`${__dirname}/404.png`);
 });
