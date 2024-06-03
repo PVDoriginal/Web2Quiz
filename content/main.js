@@ -205,13 +205,16 @@ window.onload= function(){
 function removePaun(quotes, count){
     shuffle(quotes);
     shuffle(quotes);
+    console.log(quotes);
     for (let i = 0; i < quotes.length && count > 0; i++) {
+        console.log(i);
         if (quotes[i]["name"] == "andrei paun"){
-            delete quotes[i]; 
+            delete quotes[i];
             count--;
             i--;
         }
     }
+    return quotes;
 }
 
 function updateScore(score){
