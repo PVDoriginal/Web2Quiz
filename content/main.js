@@ -37,7 +37,7 @@ window.onload= function(){
         shuffle(quotes);
         shuffle(quotes);
 
-        let count = 30;
+        let count = 20;
         quotes.forEach(function(item, index, object) {
             if (count > 0 && item['name'] === 'andrei paun') {
               object.splice(index, 1);
@@ -65,6 +65,7 @@ window.onload= function(){
         options = [];
 
         for (let i = 0; i < names.length; i++) {
+            if (search_bar.innerHTML == "<br>") search_bar.innerHTML = "";
             if(search_bar.innerHTML != "WHO ARE YOU LOOKING FOR?" && search_bar.innerHTML != "" && !names[i].includes(search_bar.innerHTML.toUpperCase())) continue;
             let option = document.createElement('span');
             option.innerHTML = names[i];
